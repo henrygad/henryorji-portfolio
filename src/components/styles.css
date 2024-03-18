@@ -1,0 +1,127 @@
+/* css styles for components files */
+
+
+
+/* 
+    css style for button component & nav compontent
+ */
+.menue_lists_wrapper,
+.button_component{
+    position: relative;
+    background-color: var(--regular-color);
+    background-clip: padding-box;
+    border-radius: 40px;
+}
+.toggle_color .menue_lists_wrapper,
+.toggle_color .button_component{
+    background-color: #fff;
+}
+.menue_lists_wrapper::before,
+.button_component::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: -.6px;
+    background-image: linear-gradient(240deg, var(--primary-color), var(--secondary-color));
+    border-radius: inherit;
+    z-index: -1;
+}
+.button_component{
+    font-size: 14px;
+    padding-block: 10px;
+    padding-inline: 15px;
+    transform-origin: center;
+    transition: all .25s ease-out;
+}
+.button_component:hover {
+    opacity: .6;
+}
+.button_component:active{
+    transform: scale(50%) ;
+}
+
+
+.header_main_menue{
+    flex: 1 0;
+    display: flex;
+    margin-top: 30px;
+}
+.menue_list_container{
+    flex: 1 0;
+    display: flex;
+    justify-content: center;
+}
+.menue_lists_wrapper{
+    display: inline-flex;
+    align-items: center;
+    grid-column-gap: 25px;
+    
+    padding-left: 5px;
+    padding-right: 40px;
+    padding-block: 2px;
+}
+.menue_lists_wrapper li{
+    font-size: 14px;
+    flex-shrink: 0;
+    list-style: none;
+    cursor: pointer;
+}
+.menue_lists_wrapper .home{
+    padding-block: 5px;
+    padding-inline: 20px;
+    border-radius: 40px;
+    background-color: rgba(41, 41, 41, 1);
+}
+.toggle_color .menue_lists_wrapper .home{
+    background-color: lightgray;
+}
+.header_menue_bnt_wrapper{
+    display: flex;
+    justify-content: flex-end;
+    grid-column-gap: 15px;
+}
+.toggle_btn{
+    position: relative;
+    width: 45px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #fff;
+    cursor:default;
+}
+.toggle_btn .toggle{
+    position: absolute;
+    top: 50;
+    left: 5%;
+    transform: translatey(-50%);
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-image: linear-gradient(240deg, var(--primary-color), var(--secondary-color));
+    transition: all .25s cubic-bezier(0.42, 0, 0.46, 1.42);
+    cursor: pointer;
+}
+/* end button component & nav compontent */
+
+
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024.9px){
+    .button_component,
+    .menue_lists_wrapper li{
+        font-size: 13px;
+    }
+  
+}
+
+/*low resolution tablets, mobiles (portrait)*/
+@media (min-width: 481px) and (max-width: 767.99px){
+    
+}
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 0px) and (max-width: 480.9px){}
+

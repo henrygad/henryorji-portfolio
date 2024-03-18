@@ -1,0 +1,289 @@
+/*global css styles  */
+
+@import url('./css/container.css');
+@import url('./css/flexbox.css');
+@import url('./css/gridbox.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+/* responsive css selector names 
+
+// containers
+    header_container_10vh
+    header_container_auto
+    hero_container_90vh
+    hero_container_100vh
+    hero_container_auto
+    container
+    container_2clm
+
+
+//flex boxs
+    flex_box_2d,
+    flex_box_3d,
+    flex_box_4d,
+    flex_box_5d
+
+
+//grid boxs
+    grid_box_3areas,
+    grid_box_4clm,
+    grid_box_5clm,
+    grid_box_6clm,
+    grid_box_7clm,
+    grid_box_8clm,
+    grid_box_9clm,
+    grid_box_10clm
+
+*/
+
+
+/*
+    global styles
+ */
+ *,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+ :root{
+    --primary-font:  'Volkhov';
+    --secondary-font: 'Google Sans';
+    --regular-font: 'roboto';
+    --auxilary-font: 'Arial, Helvetica, sans-serif';
+    ---text-font: 'poppins';
+
+    --primary-color: #1A8ECF;
+    --secondary-color: #C22626;
+    --regular-color: #232323;
+    --auxilary-color:#ffffff33;
+    --text-color: #fff;
+}
+body.disable_scrol_bar{
+    overflow-y: hidden;
+}
+body.disable_scrol_bar::-webkit-scrollbar {
+     display: none;  
+ }
+ .toggle_body_background_color{
+    background-color: #fff;
+ }
+ .toggle_color h1,
+ .toggle_color h2,
+ .toggle_color h3,
+ .toggle_color h4,
+ .toggle_color p,
+ .toggle_color label,
+ .toggle_color li,
+ .toggle_color input,
+ .toggle_color select,
+ .toggle_color textarea,
+ .toggle_color a,
+ .toggle_color button{
+   color: #333333;
+ }
+ 
+html,
+head{
+    font-family:var(--auxilary-font);
+}
+body{
+    position: relative;
+    height: auto;
+    width: auto;
+    background-color: var(--regular-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header > div,
+section,
+section{
+    width: 100%;
+    height: auto;
+    padding-left: 15%;
+    padding-right: 12%;
+}
+
+
+/* 
+    font style sizes 
+*/
+h1{
+    font-size: 42px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 18px;
+}
+h4{
+    font-size: 16px;
+}
+p,
+label,
+li,
+input,
+select,
+option,
+textarea,
+a,
+button{
+    font-size: 16px;
+}
+
+
+/* 
+    font style color 
+*/
+h1,h2,h3,h4{
+    color: var(--text-color);
+}
+h1{
+    font-family: var(--primary-font);
+}
+h2{
+    font-family: var(--secondary-font);
+}
+h3{
+    font-family: var(--regular-font);
+}
+h4{
+    font-family: var(--text-font);
+}
+p,
+label,
+li,
+input,
+select,
+textarea{
+    font-family: var(--secondary-font);
+    color: var(--text-color);
+    outline: none;
+}
+a,
+button{
+    font-family: var(--regular-font);
+    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+
+/*
+    mobile styles
+*/
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024.9px){
+    header > div,
+    section,
+    section{
+        padding-left: 6%;
+        padding-right: 5%;
+    }
+    
+    h1{
+        font-size: 42px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    h4{
+        font-size: 16px;
+    }
+    p,
+    label,
+    li,
+    input,
+    select,
+    option,
+    textarea,
+    a,
+    button{
+        font-size: 14px;
+    }
+
+}
+
+/*low resolution tablets, mobiles (portrait)*/
+@media (min-width: 481px) and (max-width: 767.99px){
+    header > div,
+    section,
+    section{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    h4{
+        font-size: 16px;
+    }
+    p,
+    label,
+    li,
+    input,
+    select,
+    option,
+    textarea,
+    a,
+    button{
+        font-size: 14px;
+    }
+    
+}
+
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 0px) and (max-width: 480.9px){
+
+    header > div,
+    section,
+    section{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    h4{
+        font-size: 16px;
+    }
+    p,
+    label,
+    li,
+    input,
+    select,
+    option,
+    textarea,
+    a,
+    button{
+        font-size: 13px;
+    }
+
+
+}

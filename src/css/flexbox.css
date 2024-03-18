@@ -1,0 +1,27 @@
+.flex_box_2d,
+.flex_box_3d,
+.flex_box_4d,
+.flex_box_5d{
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+.flex_box_2d > div,
+.flex_box_3d > div,
+.flex_box_4d > div,
+.flex_box_5d > div{
+    flex: 1 0 240.5px;
+    height: auto;
+}
+
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 0px) and (max-width: 480.9px){
+    .flex_box_2d > div,
+    .flex_box_3d > div,
+    .flex_box_4d > div,
+    .flex_box_5d > div{
+        flex-basis: 210px;
+    }
+}

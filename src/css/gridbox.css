@@ -1,0 +1,199 @@
+.grid_box_3areas,
+.grid_box_4clm,
+.grid_box_5clm,
+.grid_box_6clm,
+.grid_box_7clm,
+.grid_box_8clm,
+.grid_box_9clm,
+.grid_box_10clm{
+    display: grid;
+    grid-gap: 1px;
+    width: 100%;
+    height: auto;
+}
+
+.grid_box_3areas{
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+       'first first'
+       'second third'
+    ;
+}
+.grid_box_3areas > div:nth-child(1){
+    grid-area: first;
+}
+.grid_box_3areas > div:nth-child(2){
+    grid-area: second;
+}
+.grid_box_3areas > div:nth-child(3){
+    grid-area: third;
+}
+
+
+.grid_box_4clm{
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid_box_5clm{
+    grid-template-columns: repeat(5, 1fr);
+}
+.grid_box_6clm{
+    grid-template-columns: repeat(6, 1fr);
+}
+.grid_box_7clm{
+    grid-template-columns: repeat(7, 1fr);
+}
+.grid_box_8clm{
+    grid-template-columns: repeat(8, 1fr);
+}
+.grid_box_9clm{
+    grid-template-columns: repeat(9, 1fr);
+}
+.grid_box_10clm{
+    grid-template-columns: repeat(10, 1fr);
+}
+.grid_box_3areas > div,
+.grid_box_3areas > div,
+.grid_box_4clm > div,
+.grid_box_5clm > div,
+.grid_box_6clm > div,
+.grid_box_7clm > div,
+.grid_box_8clm > div,
+.grid_box_9clm > div,
+.grid_box_10clm > div{
+    height: auto;
+}
+
+
+/*desktops - higher resolution*/
+@media (min-width: 1281px){}
+
+/*laptops, desktops*/
+@media (min-width: 1025px) and (max-width: 1280.9px){} 
+
+/*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024.9px){
+    .grid_box_4clm{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid_box_5clm{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid_box_6clm{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .grid_box_7clm{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grid_box_8clm{
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .grid_box_9clm{
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .grid_box_10clm{
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+}
+
+/*tablets, ipads (landscape)*/
+@media (min-width: 768px) and (max-width: 1024.9px) and (orientation: landscape){
+    .grid_box_4clm{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid_box_5clm{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid_box_6clm{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .grid_box_7clm{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grid_box_8clm{
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .grid_box_9clm{
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .grid_box_10clm{
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+}
+
+/*low resolution tablets, mobiles (portrait)*/
+@media (min-width: 481px) and (max-width: 767.9px){
+    .grid_box_4clm{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid_box_5clm{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid_box_6clm{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid_box_7clm{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .grid_box_8clm{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grid_box_9clm{
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .grid_box_10clm{
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/*low resolution tablets, mobiles (landscape)*/
+@media (min-width: 481px) and (max-width: 767.9px) and (orientation: landscape){
+    .grid_box_4clm{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid_box_5clm{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid_box_6clm{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid_box_7clm{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .grid_box_8clm{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grid_box_9clm{
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .grid_box_10clm{
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 0px) and (max-width: 480.9px){
+    .grid_box_4clm{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid_box_5clm{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid_box_6clm{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid_box_7clm{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid_box_8clm{
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .grid_box_9clm{
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .grid_box_10clm{
+        grid-template-columns: repeat(7, 1fr);
+    }
+}

@@ -1,0 +1,204 @@
+/* css styles for home/app page */
+
+/* 
+    css styles for header
+ */
+    .header_container{ 
+    }
+    .header_container .header_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_logo_container{
+        display: flex;
+        align-items: flex-end;
+        margin-top: 5px;
+    }
+    .header_logo_container .logo{
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+    .header_logo_container .logo_text{
+        font-family: var(--primary-font);
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        line-height: normal;
+        font-style: italic;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .toggle_background_color_btn_container{
+      margin-top: 25px;
+      margin-left: 15px;
+    }
+ /* end of header*/
+
+
+
+ /* 
+    css style for home hero 
+  */
+  .home_hero_section{
+    display: flex;
+    align-items: flex-end;
+    height: 80vh;
+    width: 100%;
+  }
+  .home_hero_grid_design{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 100%;
+    height: 95%;
+  }
+  .home_hero_grid_design .grid_box{
+    border: 1px solid var(--auxilary-color);
+  }
+  .toggle_color .home_hero_grid_design .grid_box{
+    border-color: var(--regular-color);
+  }
+  .home_hero_grid_design .grid_box.remove_right_border{
+    border-right: 0;
+  }
+  .home_hero_grid_design .grid_box.remove_left_border{
+    border-left: 0;
+  }
+  .home_hero_grid_design .grid_box.add_star{
+    position: relative;
+  }
+  .home_hero_grid_design .grid_box.add_star::after{
+    position: absolute;
+    left: 0;
+    transform: translate(-50%);
+    content: ' ';
+    width: 30%;
+    height: 30%;
+    background-image: url('./assest/herostrarwhite.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .toggle_color .home_hero_grid_design .grid_box.add_star::after{
+    background-image: url('./assest/herostrarblack.svg');
+  }
+  .home_hero_grid_design .grid_box.add_star.one::after{
+    bottom: -18%;
+  }
+  .home_hero_grid_design .grid_box.add_star.two::after{
+    top: -18%;
+  }
+  .home_hero_grid_design .grid_box.bigger_box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row-gap: 10px;
+    text-align: center;
+    grid-area: 4 span / 4 span;
+    padding: 20px 10px;
+    border-right: 0;
+    border-left: 0;
+  }
+  .home_hero_grid_design .grid_box.bigger_box::after,
+  .home_hero_grid_design .grid_box.bigger_box::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    margin: -.8px;
+    background-image: linear-gradient(240deg, var(--secondary-color), var(--primary-color));
+    z-index: -1;
+  }
+  .home_hero_grid_design .grid_box.bigger_box::after{
+    left: 0;
+    right: 100%;
+  }
+  .home_hero_grid_design .grid_box.bigger_box::before{
+    left: 100%;
+    right: 0;
+  }
+  .home_hero_grid_design .grid_box.bigger_box .image{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid pink;
+  }
+  .home_hero_grid_design .grid_box.bigger_box h2{
+    font-weight: bold;
+    white-space: pre;
+  }
+  .home_hero_grid_design .grid_box.bigger_box .greetings{
+    font-size: 16px;
+  }
+  .home_hero_grid_design .grid_box.bigger_box .name{
+    font-size: 22px;
+  }
+  .home_hero_grid_design .grid_box.bigger_box .name .italic{
+    font-style: italic;
+  }
+  .home_hero_grid_design .grid_box.bigger_box h1{
+    margin-top: -5px;
+    font-weight: bold;
+  }
+  .home_hero_grid_design .grid_box.bigger_box p{
+    font-family:  var(--regular-font);
+  }
+  .home_curosel_slider_section{
+    height: 10vh;
+    padding-inline: 0 !important;
+  }
+  .home_curosel_slider_wrapper{
+    display: flex;
+    align-items: center;
+    height: 95%;
+    width: 100%;
+    border: 1px solid var(--auxilary-color);
+    border-right: 0;
+    border-left: 0;
+  }
+  .home_curosel_slider_wrapper .content{
+    height: 100%;
+  }
+
+  /* end of home hero */
+
+
+
+  /*tablets, ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024.9px){
+  
+}
+
+/*low resolution tablets, mobiles (portrait)*/
+@media (min-width: 481px) and (max-width: 767.99px){
+    
+}
+
+/*smartphones mobiles (portrait)*/
+@media (min-width: 0px) and (max-width: 480.9px){
+    .header_container .header_wrapper {
+        background-color: red;
+    }
+
+    .home_hero_grid_design{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+      }
+    .home_hero_grid_design .grid_box.bigger_box{
+        grid-area: 3 span / 4 span;
+      }
+      .home_hero_grid_design .grid_box.is_display{
+        display: none;
+      }
+
+
+    .home_hero_grid_design .grid_box.bigger_box .greetings{
+        font-size: 14px;
+      }
+      .home_hero_grid_design .grid_box.bigger_box .name{
+        font-size: 18px;
+      }
+}
