@@ -19,7 +19,7 @@ interface Props {
 
 const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}: Props, func = (advanceFeature: {})=>{}) => {
 
-    window.addEventListener('load', ()=> handleSlider() )
+
     const handleSlider = () => {
         const slides_ele = document.getElementById(sliderId) as HTMLElement
 
@@ -69,6 +69,7 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
          }
         
     }
+    window.onload =  handleSlider
 
     return ()=>{window.addEventListener('resize', ()=>{ 
             window.location.reload()
