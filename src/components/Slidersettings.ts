@@ -19,14 +19,15 @@ interface Props {
 
 const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}: Props, func = (advanceFeature: {})=>{}) => {
 
-    const handleSlider = (update: ()=> number) => {
+    window.addEventListener('load', ()=> handleSlider() )
+    const handleSlider = () => {
         const slides_ele = document.getElementById(sliderId) as HTMLElement
 
         const hundrenViewWidth: number = 100
         const oneSlide: number = hundrenViewWidth
         const repeatFirstslide: number = 1 * oneSlide
-        const numberOfContent_per_vw: number = update()
-        const numberOfSlides: number = (totalNumberOfcontents / numberOfContent_per_vw)  * oneSlide
+        const numberOfContentPerVW: number = numberOfContent_per_vw()
+        const numberOfSlides: number = (totalNumberOfcontents / numberOfContentPerVW)  * oneSlide
         const totalNumberOFSlidesWidht: number = numberOfSlides +  repeatFirstslide
         const evaluateWidthAndHeight = (value: string) => {     
             let newValue;
@@ -53,7 +54,7 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
                     autoPlay?.autoPlayTransitionAnimation,
                     numberOfSlides, 
                     oneSlide,
-                    numberOfContent_per_vw
+                    numberOfContentPerVW
                 ], func)
 
 
@@ -68,9 +69,6 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
          }
         
     }
-
-    window.addEventListener('load', ()=> handleSlider(numberOfContent_per_vw) )
-    //setTimeout(()=>{handleSlider(numberOfContent_per_vw) }, 100)
 
     return ()=>{window.addEventListener('resize', ()=>{ 
             window.location.reload()

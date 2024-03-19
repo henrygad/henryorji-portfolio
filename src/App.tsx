@@ -38,7 +38,7 @@ const App = () => {
     pause: true,
     onloadPlay: true,
     autoPlayDurition: 8000,
-    autoPlayTransitionAnimation: "all 9.5s linear"
+    autoPlayTransitionAnimation: "left 9.5s linear"
   }
 
     const onResizeNumberOfContent_per_vw = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})
