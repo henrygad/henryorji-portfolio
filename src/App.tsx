@@ -11,23 +11,24 @@ import logo from "./assest/henrylogo.svg"
 const App = () => {
 
   const slidesContent:React.ReactElement[]  = [
-    <div className="slide_content"><p>one</p></div>,
-    <div className="slide_content"><p>two</p></div>,
-    <div className="slide_content"><p>three</p></div>,
-    <div className="slide_content"><p>four</p></div>,
-    <div className="slide_content"><p>five</p></div>,
-    <div className="slide_content"><p>six</p></div>,
+    <div className="slide_content"><p>Figman</p></div>,
+    <div className="slide_content"><p>HTML</p></div>,
+    <div className="slide_content"><p>CSS</p></div>,
+    <div className="slide_content"><p>JavaScript</p></div>,
+
+    <div className="slide_content"><p>Reactjs</p></div>,
+    <div className="slide_content"><p>React native</p></div>,
+    <div className="slide_content"><p>Nodejs</p></div>,
+    <div className="slide_content"><p>MongoDB</p></div>,
   ]
 
   const sliderId = "horocurosel-js"
   const slidemove_from = "left"
-  const totalNumberOfcontents = 6
+  const totalNumberOfcontents = 8
   const handleNumberOfContent_per_vw = ()=>{
-    if(window.innerWidth >= 480.99 && window.innerWidth <= 767){
+    if(window.innerWidth <= 480){
       return 2
-    } else if(window.innerWidth <= 480){
-      return 1
-    }else return 3
+    }else return 4
 
   }
   const numberOfContent_per_vw = () => {
@@ -36,9 +37,9 @@ const App = () => {
   const autoPlay = {
     play: true,
     pause: true,
-    onloadPlay: false,
-    autoPlayDurition: 5000,
-    autoPlayTransitionAnimation: "all 6s ease"
+    onloadPlay: true,
+    autoPlayDurition: 8000,
+    autoPlayTransitionAnimation: "all 8s ease"
   }
 
     const [onResizeNumberOfContent_per_vw] = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})
