@@ -69,7 +69,7 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
          }
         
     }
-    window.onload =  handleSlider
+    setTimeout(handleSlider, 1);  
 
     return ()=>{window.addEventListener('resize', ()=>{ 
             window.location.reload()
