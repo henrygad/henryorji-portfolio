@@ -36,7 +36,6 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
       
             return newValue
          }
-
          
          slides_ele.style.width = evaluateWidthAndHeight(slidemove_from.toLocaleLowerCase()) === 'left'? totalNumberOFSlidesWidht+'%': '100%'
          slides_ele.style.height = evaluateWidthAndHeight(slidemove_from.toLocaleLowerCase()) === 'top'?  totalNumberOFSlidesWidht+'%': '100%'
@@ -71,10 +70,10 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
     }
 
     setTimeout(()=>{handleSlider(numberOfContent_per_vw) }, 100)
-    //window.addEventListener('load', ()=>{handleSlider(numberOfContent_per_vw)  })
 
-
-    return (onResizeNumberOfContent_per_vw: () => number)=>{window.addEventListener('resize', ()=> handleSlider(onResizeNumberOfContent_per_vw)
+    return ()=>{window.addEventListener('resize', ()=>{ 
+            window.location.reload()
+        }
     )}
 }
 
