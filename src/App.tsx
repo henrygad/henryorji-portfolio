@@ -26,10 +26,12 @@ const App = () => {
   const slidemove_from = "left"
   const totalNumberOfcontents = 8
   const handleNumberOfContent_per_vw = ()=>{
-    if(window.innerWidth <= 480){
-      return 2
-    }else return 4
+    let value: number = 2
+    if(window.innerWidth >= 480.99){
+      value = 4
+    }
 
+    return value
   }
   const numberOfContent_per_vw = () => {
    return handleNumberOfContent_per_vw()
@@ -37,12 +39,12 @@ const App = () => {
   const autoPlay = {
     play: true,
     pause: true,
-    onloadPlay: true,
+    onloadPlay: false,
     autoPlayDurition: 8000,
-    autoPlayTransitionAnimation: "all 8s ease"
+    autoPlayTransitionAnimation: "all 9s linear"
   }
 
-    const [onResizeNumberOfContent_per_vw] = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})
+    const onResizeNumberOfContent_per_vw = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})
 
     onResizeNumberOfContent_per_vw(()=> {
       return handleNumberOfContent_per_vw()
