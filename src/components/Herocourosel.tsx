@@ -30,10 +30,9 @@ const Herocourosel = () => {
         let value: number
 
         if(window.innerWidth <= 480){
-          value = 2
+          value = 1
         }else if(window.innerWidth >= 481 && window.innerWidth <= 767){
-          value = 3
-
+          value = 2
         } else value = 4
     
         return value     
@@ -42,8 +41,8 @@ const Herocourosel = () => {
         play: true,
         pause: true,
         onloadPlay: true,
-        autoPlayDurition: 5000,
-        autoPlayTransitionAnimation: "left 7s linear"
+        autoPlayDurition: 10000,
+        autoPlayTransitionAnimation: "left 10s linear"
       }
     
         const onResizeNumberOfContent_per_vw = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})

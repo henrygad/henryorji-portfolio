@@ -217,21 +217,27 @@
         onclick using js restyle toggle btn  and responsive nav */
     .toggle_btn_responsive_nav.toggle .toggle_wrapper #long_hand{
         transform-origin: center;
-        transform: rotate(45deg);
-        top: 1.5%;
-        left: 0%;
+        transform: rotate(-45deg);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
     .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.left{
-        display: none; 
+        transform-origin: top;
+        transform: rotate(45deg);
+        top: 0;
+        left: -5%;
+        right: 0;
     }
     .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.right{
-        transform-origin: center;
-        transform: rotate(-45deg);
-        right: 0%;
-        bottom: 10%;
-        width: 35%;
+        transform-origin: bottom;
+        transform: rotate(45deg);
+        top: 0;
+        right: 0;
+        left: 6%;
+        bottom: 0;
     }
-
     .header_main_menue .responsive_nav{
         display: flex;
         flex-direction: column;
@@ -239,22 +245,23 @@
         align-items: center;
         grid-row-gap: 50px;
         position: fixed;
-        left: 0;
+        left: 1%;
         bottom: -90%;
-        width: 50%;
-        height: 90%;
+        width: 40%;
+        height: 85%;
         transition: all .5s linear;
         z-index: 100;
     }
     .menue_list_container{
-        flex: .5 0;
+        flex: .8 0;
     }
     .menue_list_container .menue_lists_wrapper{
         flex-direction: column;
         justify-content: center;
         align-items: center;
         grid-row-gap: 50px;
-        padding: 0  20px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .menue_list_container .menue_lists_wrapper li{
         font-size: 14px;
