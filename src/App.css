@@ -16,18 +16,18 @@
         margin-top: 5px;
     }
     .header_logo_container .logo{
-        width: 60px;
+        width: 55px;
         height: 60px;
         cursor: pointer;
     }
     .header_logo_container .logo_text{
         font-family: var(--primary-font);
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 500;
-        letter-spacing: 3px;
+        letter-spacing: 1px;
         line-height: normal;
         font-style: italic;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
         cursor: pointer;
     }
     .toggle_background_color_btn_container{
@@ -92,15 +92,15 @@
   }
   .home_hero_grid_design .grid_box.bigger_box{
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-row-gap: 10px;
-    text-align: center;
     grid-area: 4 span / 4 span;
     padding: 20px 10px;
     border-right: 0;
     border-left: 0;
+    background-image: url("./assest/profilepic.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -0cqh;
+    background-size: contain;
   }
   .home_hero_grid_design .grid_box.bigger_box::after,
   .home_hero_grid_design .grid_box.bigger_box::before{
@@ -120,13 +120,20 @@
     left: 100%;
     right: 0;
   }
-  .home_hero_grid_design .grid_box.bigger_box .image{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 1px solid pink;
+  .home_hero_grid_design .grid_box.bigger_box .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row-gap: 20px;
+   
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0px 10px 10px 10px;
   }
   .home_hero_grid_design .grid_box.bigger_box h2{
+    width: 90%;
     font-weight: bold;
     white-space: pre;
   }
@@ -139,13 +146,28 @@
   .home_hero_grid_design .grid_box.bigger_box .name .italic{
     font-style: italic;
   }
+  .home_hero_grid_design .grid_box.bigger_box .txt{
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 4px;
+    padding: 5px;
+    background-color: rgb(35, 35, 35, .4);
+  }
+  .toggle_color .home_hero_grid_design .grid_box.bigger_box .txt{
+    background-color: rgba(0, 0, 0, 0);
+  }
   .home_hero_grid_design .grid_box.bigger_box h1{
     margin-top: -5px;
     font-weight: bold;
   }
   .home_hero_grid_design .grid_box.bigger_box p{
+    text-align: center;
     font-family:  var(--regular-font);
   }
+
+  /* *
+    css style for hero courosel section
+   */
   .home_curosel_slider_section{
     height: 10vh;
     padding-inline: 0 !important;
@@ -158,6 +180,9 @@
     border: 1px solid var(--auxilary-color);
     border-right: 0;
     border-left: 0;
+  }
+  .toggle_color .home_curosel_slider_wrapper{
+    border-color: var(--regular-color);
   }
   .home_curosel_slider_wrapper .content{
     height: 100%;
@@ -179,9 +204,6 @@
 
 /*smartphones mobiles (portrait)*/
 @media (min-width: 0px) and (max-width: 480.9px){
-    .header_container .header_wrapper {
-        background-color: red;
-    }
 
     .home_hero_grid_design{
         grid-template-columns: repeat(4, 1fr);

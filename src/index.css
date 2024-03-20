@@ -55,7 +55,7 @@
     --secondary-font: 'Google Sans';
     --regular-font: 'roboto';
     --auxilary-font: 'Arial, Helvetica, sans-serif';
-    ---text-font: 'poppins';
+    --text-font: 'poppins';
 
     --primary-color: #1A8ECF;
     --secondary-color: #C22626;
@@ -86,7 +86,6 @@ body.disable_scrol_bar::-webkit-scrollbar {
  .toggle_color button{
    color: #333333;
  }
- 
 html,
 head{
     font-family:var(--auxilary-font);
@@ -162,7 +161,8 @@ li,
 input,
 select,
 textarea{
-    font-family: var(--secondary-font);
+    font-family: var(--text-font);
+    font-weight: bold;
     color: var(--text-color);
     outline: none;
 }
@@ -220,8 +220,8 @@ button{
     header > div,
     section,
     section{
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
     h1{
@@ -257,8 +257,8 @@ button{
     header > div,
     section,
     section{
-        padding-left: 2%;
-        padding-right: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
     }
 
     h1{

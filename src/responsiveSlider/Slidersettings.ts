@@ -1,5 +1,5 @@
-import {Getcurrentslidesposition, Moveslides} from "../app/index"
-import {Autoslidernav} from "../app/controls"
+import {Getcurrentslidesposition, Moveslides} from "./app/index"
+import {Autoslidernav} from "./app/controls"
 
 interface Props {
     sliderId: string,
@@ -18,15 +18,15 @@ interface Props {
 }
 
 const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}: Props, func = (advanceFeature: {})=>{}) => {
+    const innitailValue: number = numberOfContent_per_vw()
 
-
-    const handleSlider = () => {
+    const handleSlider = (funcvalue: ()=> number) => {
         const slides_ele = document.getElementById(sliderId) as HTMLElement
 
         const hundrenViewWidth: number = 100
         const oneSlide: number = hundrenViewWidth
         const repeatFirstslide: number = 1 * oneSlide
-        const numberOfContentPerVW: number = numberOfContent_per_vw()
+        const numberOfContentPerVW: number = funcvalue()
         const numberOfSlides: number = (totalNumberOfcontents / numberOfContentPerVW)  * oneSlide
         const totalNumberOFSlidesWidht: number = numberOfSlides +  repeatFirstslide
         const evaluateWidthAndHeight = (value: string) => {     
@@ -69,10 +69,14 @@ const Slidersettings = ({sliderId, slidemove_from, totalNumberOfcontents, number
          }
         
     }
-    setTimeout(handleSlider, 1);  
+    setTimeout(()=> handleSlider(()=> innitailValue), 1)
 
-    return ()=>{window.addEventListener('resize', ()=>{ 
-            window.location.reload()
+
+    return ()=>{ window.addEventListener('resize', ()=>{ 
+        const updatedValue: number = numberOfContent_per_vw()
+         if(updatedValue !== innitailValue){
+             window.location.reload()
+         }
         }
     )}
 }

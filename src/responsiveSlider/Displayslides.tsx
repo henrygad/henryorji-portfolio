@@ -1,4 +1,3 @@
-import "./styles.css"
 import { CSSProperties} from "react"
 
 
@@ -42,7 +41,6 @@ const Herocurosel = ({slidesContent,  numberOfContent_per_vw, slidemove_from, sl
    const slidesStyle: CSSProperties = {
       display: 'flex',
       flexDirection: slidemove_from.toLocaleLowerCase() === 'top' || slidemove_from.toLocaleLowerCase() === 'bottom'? 'column': 'row', 
-      gridGap: '1px',
       position: 'relative', 
       top: '0%', 
       left: '0%',
@@ -52,8 +50,7 @@ const Herocurosel = ({slidesContent,  numberOfContent_per_vw, slidemove_from, sl
    }  
    const slideStyle: CSSProperties = {
       width: '100%',
-      height: '100%',
-      backgroundColor: 'red',
+      height: '100%'
    }
 
 

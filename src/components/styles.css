@@ -5,6 +5,7 @@
 /* 
     css style for button component & nav compontent
  */
+ .toggle_btn_responsive_nav,
 .menue_lists_wrapper,
 .button_component{
     position: relative;
@@ -12,10 +13,12 @@
     background-clip: padding-box;
     border-radius: 40px;
 }
+.toggle_color .toggle_btn_responsive_nav,
 .toggle_color .menue_lists_wrapper,
 .toggle_color .button_component{
     background-color: #fff;
 }
+.toggle_btn_responsive_nav::before,
 .menue_lists_wrapper::before,
 .button_component::before{
     content: '';
@@ -30,14 +33,14 @@
     z-index: -1;
 }
 .button_component{
-    font-size: 14px;
-    padding-block: 10px;
-    padding-inline: 15px;
+    font-size: 13px;
+    padding-block: 12px;
+    padding-inline: 12px;
     transform-origin: center;
     transition: all .25s ease-out;
 }
 .button_component:hover {
-    opacity: .6;
+    opacity: .9;
 }
 .button_component:active{
     transform: scale(50%) ;
@@ -49,6 +52,13 @@
     display: flex;
     margin-top: 30px;
 }
+.header_main_menue .desk_top_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 .menue_list_container{
     flex: 1 0;
     display: flex;
@@ -57,21 +67,21 @@
 .menue_lists_wrapper{
     display: inline-flex;
     align-items: center;
-    grid-column-gap: 25px;
+    grid-column-gap: 20px;
     
     padding-left: 5px;
-    padding-right: 40px;
+    padding-right: 30px;
     padding-block: 2px;
 }
 .menue_lists_wrapper li{
-    font-size: 14px;
+    font-size: 13px;
     flex-shrink: 0;
     list-style: none;
     cursor: pointer;
 }
 .menue_lists_wrapper .home{
     padding-block: 5px;
-    padding-inline: 20px;
+    padding-inline: 15px;
     border-radius: 40px;
     background-color: rgba(41, 41, 41, 1);
 }
@@ -104,16 +114,39 @@
     transition: all .25s cubic-bezier(0.42, 0, 0.46, 1.42);
     cursor: pointer;
 }
+.header_main_menue .toggle_btn_responsive_nav{
+    display: none;
+}
+.header_main_menue .responsive_nav{
+    display: none;
+}
 /* end button component & nav compontent */
+
+/* *
+    css style for hero courosle slides
+ */
+ .slide_content{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 30px;
+ }
+ .slide_content p{
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1px;
+ }
+ .slide_content img{
+    height: 20px;
+    object-fit: contain;
+ }
 
 
 
 /*tablets, ipads (portrait)*/
 @media (min-width: 768px) and (max-width: 1024.9px){
-    .button_component,
-    .menue_lists_wrapper li{
-        font-size: 13px;
-    }
   
 }
 
@@ -122,6 +155,121 @@
     
 }
 
+/*low resolution tablets, mobiles (portrait) for navigation*/
+@media (min-width: 0px) and (max-width: 767.99px){
+    .header_main_menue{
+        justify-content: flex-end;
+    }
+    .header_main_menue .desk_top_nav{
+        display: none;
+    }
+    .header_main_menue .toggle_btn_responsive_nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 85%;
+        border-radius: 40px;
+        background-color: rgba(41, 41, 41, 1);
+    }
+    .toggle_color .toggle_btn_responsive_nav .toggle_wrapper{
+        background-color: lightgray;
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper span{
+        display: block;
+        position: relative;
+        height: 11%;
+        transform: translate(-50%);
+        transition: all .25s ease;
+        border-radius: 40px;
+        background-color: #fff;
+    }
+    .toggle_color .toggle_btn_responsive_nav .toggle_wrapper span{
+        background-color: var(--regular-color);
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper .short_hand{
+        width: 15.25%;
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper .short_hand.left{
+        left: -1%;
+        top: -5%;
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper .short_hand.right{
+        right: -20%;
+        bottom: -5%;
+    }
+    .toggle_btn_responsive_nav .toggle_wrapper #long_hand{
+        top: 0;
+        left: 20%;
+        width: 35%;
+    }
+
+    /** 
+        onclick using js restyle toggle btn  and responsive nav */
+    .toggle_btn_responsive_nav.toggle .toggle_wrapper #long_hand{
+        transform-origin: center;
+        transform: rotate(45deg);
+        top: 1.5%;
+        left: 0%;
+    }
+    .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.left{
+        display: none; 
+    }
+    .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.right{
+        transform-origin: center;
+        transform: rotate(-45deg);
+        right: 0%;
+        bottom: 10%;
+        width: 35%;
+    }
+
+    .header_main_menue .responsive_nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        grid-row-gap: 50px;
+        position: fixed;
+        left: 0;
+        bottom: -90%;
+        width: 50%;
+        height: 90%;
+        transition: all .5s linear;
+        z-index: 100;
+    }
+    .menue_list_container{
+        flex: .5 0;
+    }
+    .menue_list_container .menue_lists_wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-row-gap: 50px;
+        padding: 0  20px;
+    }
+    .menue_list_container .menue_lists_wrapper li{
+        font-size: 14px;
+    }
+    .header_menue_bnt_wrapper{
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+        flex-direction: column;
+    }
+    .button_component{
+        font-size: 14px;
+    }
+    /* end of  onclick using js restyle toggle btn and responsive nav */
+
+}
+
 /*smartphones mobiles (portrait)*/
 @media (min-width: 0px) and (max-width: 480.9px){}
-

@@ -1,49 +1,13 @@
 import "./App.css"
 import Nav from "./components/Nav"
 import Togglebackgroundcolor from "./components/Togglebackgroundcolor"
-import Herocurosel from "./components/Herocurosel"
-import Slidersettings from "./components/Slidersettings"
+import Herocourosel from "./components/Herocourosel"
 import Button from "./components/Button"
-import henryprofilepic from "./assest/profilepic.png"
+
 import logo from "./assest/henrylogo.svg"
 
 
 const App = () => {
-
-  const slidesContent:React.ReactElement[]  = [
-    <div className="slide_content"><p>Figman</p></div>,
-    <div className="slide_content"><p>HTML</p></div>,
-    <div className="slide_content"><p>CSS</p></div>,
-    <div className="slide_content"><p>JavaScript</p></div>,
-
-    <div className="slide_content"><p>Reactjs</p></div>,
-    <div className="slide_content"><p>React native</p></div>,
-    <div className="slide_content"><p>Nodejs</p></div>,
-    <div className="slide_content"><p>MongoDB</p></div>,
-  ]
-
-  const sliderId = "horocurosel-js"
-  const slidemove_from = "left"
-  const totalNumberOfcontents = 8
-  const numberOfContent_per_vw = () => {
-    let value: number = 2
-    if(window.innerWidth >= 767.99){
-      value = 4
-    }
-
-    return value
-  }
-  const autoPlay = {
-    play: true,
-    pause: true,
-    onloadPlay: true,
-    autoPlayDurition: 8000,
-    autoPlayTransitionAnimation: "left 8s linear"
-  }
-
-    const onResizeNumberOfContent_per_vw = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{})
-
-    onResizeNumberOfContent_per_vw()
   
 
   return<>
@@ -70,14 +34,17 @@ const App = () => {
             <div className="grid_box add_star one "></div>
             <div className="grid_box remove_right_border is_display"></div>
             <div className="grid_box bigger_box ">
-              <img className="image" src={henryprofilepic} alt="henry" />
-              <h2> 
-                <span className="greetings">Hi there !</span> <br />
-                <span className="name">I'm Henry Orji</span>
-              </h2>
-                <h1 className="skill">Front-end Developer</h1>
-                <p className="intro_text">I deseign and build clean and mobile friendly website and application</p>
+              <div className="content">
+                <h2> 
+                  <span className="greetings">Hi there !</span> <br />
+                  <span className="name">I'm Henry Orji</span>
+                </h2>
+                <div className="txt">
+                  <h1 className="skill">Mern Full-Stack Developer</h1>
+                  <p className="intro_text">I deseign and build clean and mobile friendly website and application</p>
+                </div>
                 <Button text="Hire me" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+              </div>
             </div>
             <div className="grid_box remove_left_border is_display"></div>
             <div className="grid_box remove_right_border is_display"></div>
@@ -103,7 +70,7 @@ const App = () => {
       <section className="home_curosel_slider_section">
         <div className="home_curosel_slider_wrapper">
           <section className="content">
-            <Herocurosel slidesContent={slidesContent}  numberOfContent_per_vw={5} slidemove_from='left' sliderId={sliderId}/>
+            <Herocourosel />
           </section>
         </div>
       </section>
