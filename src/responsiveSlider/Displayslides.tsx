@@ -58,9 +58,9 @@ const Herocurosel = ({slidesContent,  numberOfContent_per_vw, slidemove_from, sl
   return <div className="slider" style={sliderStyle}>
   <div className="slides" id={sliderId} style={slidesStyle}>
      {createNewArrslides.map(slideContents => (
-      slideContents.map((slideContent, index) =>  <div className="slide" key={index} style={slideStyle}>{slideContent}</div>)
+      slideContents.map((slideContent, index) =>  <div className="slide" key={index + 1} style={slideStyle}>{slideContent}</div>)
      ))}
-     { createNewArrslides[0].map((slideContent, index) => <div className="slide" key={index} style={slideStyle}>{slideContent}</div>)}
+     { createNewArrslides[0].map((slideContent, index) => <div className="slide" key={index + 1} style={slideStyle}>{slideContent}</div>)}
   </div>
 </div>
 }

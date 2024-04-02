@@ -59,7 +59,7 @@
 
     --primary-color: #1A8ECF;
     --secondary-color: #C22626;
-    --regular-color: #232323;
+    --regular-color: #080808;
     --auxilary-color:#ffffff33;
     --text-color: #fff;
 }
@@ -109,6 +109,7 @@ section{
 }
 
 
+
 /* 
     font style sizes 
 */
@@ -116,13 +117,13 @@ h1{
     font-size: 42px;
 }
 h2{
-    font-size: 24px;
+    font-size: 30px;
 }
 h3{
-    font-size: 18px;
+    font-size: 20px;
 }
 h4{
-    font-size: 16px;
+    font-size: 18px;
 }
 p,
 label,
@@ -162,7 +163,6 @@ input,
 select,
 textarea{
     font-family: var(--text-font);
-    font-weight: bold;
     color: var(--text-color);
     outline: none;
 }
@@ -188,18 +188,18 @@ button{
         padding-left: 6%;
         padding-right: 5%;
     }
-    
+
     h1{
         font-size: 42px;
     }
     h2{
-        font-size: 24px;
+        font-size: 30px;
     }
     h3{
-        font-size: 18px;
+        font-size: 20px;
     }
     h4{
-        font-size: 16px;
+        font-size: 18px;
     }
     p,
     label,
@@ -210,7 +210,7 @@ button{
     textarea,
     a,
     button{
-        font-size: 14px;
+        font-size: 15px;
     }
 
 }
@@ -228,13 +228,13 @@ button{
         font-size: 32px;
     }
     h2{
-        font-size: 20px;
+        font-size: 28px;
     }
     h3{
-        font-size: 16px;
+        font-size: 20px;
     }
     h4{
-        font-size: 16px;
+        font-size: 18px;
     }
     p,
     label,
@@ -245,7 +245,7 @@ button{
     textarea,
     a,
     button{
-        font-size: 14px;
+        font-size: 15px;
     }
     
 }
@@ -262,13 +262,13 @@ button{
     }
 
     h1{
-        font-size: 24px;
+        font-size: 28px;
     }
     h2{
-        font-size: 18px;
+        font-size: 24px;
     }
     h3{
-        font-size: 16px;
+        font-size: 18px;
     }
     h4{
         font-size: 16px;
@@ -282,7 +282,7 @@ button{
     textarea,
     a,
     button{
-        font-size: 13px;
+        font-size: 14px;
     }
 
 

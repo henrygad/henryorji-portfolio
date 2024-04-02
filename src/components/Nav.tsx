@@ -1,6 +1,5 @@
 import "./styles.css"
 import Button from "./Button"
-import homeicon from "../assest/homeicon.svg"
 import { useRef} from "react"
 
 const Nav = () => {
@@ -15,7 +14,7 @@ const Nav = () => {
     if(responsivenavRef.current)
     if(isOpenresponsivenav){
       responsivenavRef.current.style.bottom = '0'
-    }else responsivenavRef.current.style.bottom = '-90%'
+    }else responsivenavRef.current.style.bottom = '-100%'
     
   }
 
@@ -27,7 +26,7 @@ const Nav = () => {
     <div className="desk_top_nav">
       <div className="menue_list_container">
         <ul className="menue_lists_wrapper">
-            <li className="home"><img src={homeicon} alt="home nav" /></li>
+            <li className="home"></li>
             <li className="about">About</li>
             <li className="projects">Projects</li>
             <li className="contact">Contact me</li>
@@ -52,7 +51,7 @@ const Nav = () => {
     <div className="responsive_nav" ref={responsivenavRef}>
       <div className="menue_list_container">
         <ul className="menue_lists_wrapper">
-            <li className="home"><img src={homeicon} alt="home nav" /></li>
+            <li className="home"></li>
             <li className="about">About</li>
             <li className="projects">Projects</li>
             <li className="contact">Contact me</li>

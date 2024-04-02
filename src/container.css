@@ -4,15 +4,26 @@
     position: relative;
     display: block;
     width: 100%;
-    min-height: 9.9vh;
+    min-height: 10vh;
     max-height: 100px;
+}
+.header_nav_fixed_position{
+    /* a header navigation fixed position  */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+.header_nav_fixed_position_margin_top{
+    /* a header  navigation fixed position margin at the top */
+   margin-top: 10vh;
 }
 .header_container_auto{
    /* an auto header container with an initial height of 100px */
     position: relative;
     display: block;
     width: 100%;
-    height: auto;
 }
 .hero_container_90vh{
     /* a hero container with an initial height of 90vh */
@@ -33,14 +44,12 @@
     position: relative;
     display: block;
     width: 100%;
-    height: auto;
 }
 .container{
     /*  a single container with an initial of height 100px*/
     position: relative;
     display: block;
     width: 100%;
-    height: auto;
 }
 .container_2clm{
     /* container with two conlumn and with an total initial of 100px */
@@ -48,5 +57,20 @@
     display: inline-flex;
     flex-direction: column;
     width: 100%;
-    height: auto;
+}
+
+@media (max-height: 800px){
+    .header_container_10vh{
+        /* a header container with an initial height of 10vh */
+        min-height: 90px;
+    }
+    .header_nav_fixed_position_margin_top{
+        /* a header  navigation fixed position margin at the top */
+       margin-top: 90px;
+    }
+    .hero_container_90vh{
+        /* a hero container with an initial height of 90vh */
+        height: 750px;
+    }
+   
 }

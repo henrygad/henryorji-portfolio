@@ -1,3 +1,4 @@
+.grid_box_2clm,
 .grid_box_3areas,
 .grid_box_4clm,
 .grid_box_5clm,
@@ -30,7 +31,9 @@
     grid-area: third;
 }
 
-
+.grid_box_2clm{
+    grid-template-columns: repeat(2, 1fr);
+}
 .grid_box_4clm{
     grid-template-columns: repeat(4, 1fr);
 }
@@ -52,6 +55,7 @@
 .grid_box_10clm{
     grid-template-columns: repeat(10, 1fr);
 }
+.grid_box_2clm > div,
 .grid_box_3areas > div,
 .grid_box_3areas > div,
 .grid_box_4clm > div,
@@ -175,6 +179,9 @@
 
 /*smartphones mobiles (portrait)*/
 @media (min-width: 0px) and (max-width: 480.9px){
+    .grid_box_2clm{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .grid_box_4clm{
         grid-template-columns: repeat(1, 1fr);
     }
