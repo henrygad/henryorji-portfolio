@@ -100,12 +100,12 @@ body{
 }
 
 header > div,
-section,
 section{
     width: 100%;
     height: auto;
     padding-left: 15%;
     padding-right: 12%;
+    overflow: hidden;
 }
 
 

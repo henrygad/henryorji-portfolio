@@ -12,7 +12,7 @@ const Animatetext = ( {content,
  onScroll } : Global) => {
 
     const [isOn, setIsOn] = useState<boolean>(false)
-    const [minHeight, setMinHeight] = useState<number>(0)
+    const [minHeight, setMinHeight] = useState<number>(20)
     const parentEle = useRef<HTMLDivElement>(null)
 
     useEffect(()=>{

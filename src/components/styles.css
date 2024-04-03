@@ -249,9 +249,6 @@
 
    /* *
     css style for featured projects component */
-    .featured_projects{
-        overflow: hidden;
-    }
    .featured_projects .wrapper{
     display: flex;
     flex-direction: column;
@@ -478,13 +475,7 @@
     /* end of css google map componnent */
 
 
-
-
-
-
-
-
-
+    
 
 /*tablets, ipads (portrait)*/
 @media (min-width: 768px) and (max-width: 1024.9px){
@@ -496,7 +487,6 @@
     .featured_projects .wrapper .featured_projects_box .image.desk_top{
         height: 600px;
       }
-    
 }
 
 /*low resolution tablets, mobiles (portrait) for navigation*/
@@ -572,14 +562,12 @@
         transform: rotate(45deg);
         top: 0;
         left: -5%;
-        right: 0;
     }
     .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.right{
-        transform-origin: center;
-        transform: rotate(-45deg);
-        right: 0%;
-        bottom: 10%;
-        width: 35%;
+        transform-origin: bottom;
+        transform: rotate(45deg);
+        right: -7%;
+        bottom: 0%;
     }
     .header_main_menue .responsive_nav{
         display: flex;
@@ -589,10 +577,10 @@
         grid-row-gap: 50px;
         position: fixed;
         left: 0;
-        bottom: -90%;
         width: 50%;
-        height: 90%;
+        height: 100%;
         transition: all .5s linear;
+        background-color: var(--regular-color);
         z-index: 100;
     }
     .toggle_color  .header_main_menue .responsive_nav{
