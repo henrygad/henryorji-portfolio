@@ -95,7 +95,8 @@ advancefeatures = (value: {}) => {}}: Props) => {
 
 
    useEffect(()=> { 
-      handleSlides(initialNumberOfSlides)
+      handleSlides(3)
+      setTimeout(()=>{handleSlides(1)}, 20000)
 
    })
   
@@ -103,7 +104,7 @@ advancefeatures = (value: {}) => {}}: Props) => {
       const updatedNumberOfSlides: number = numberOfContent_per_vw()
       
       if(updatedNumberOfSlides !== initialNumberOfSlides){
-         handleSlides(updatedNumberOfSlides)
+        // handleSlides(updatedNumberOfSlides)
          initialNumberOfSlides = updatedNumberOfSlides
       }
    })
