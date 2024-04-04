@@ -2,6 +2,7 @@ import "./styles.css"
 import Button from "./Button"
 import {useEffect, useRef} from "react"
 import getOnviewpiont from "../Hooks/getOnviewport"
+import navigateSmoothly from "../Hooks/navigateSmoothly"
 
 
 interface Global {
@@ -35,18 +36,8 @@ const Nav = () => {
   }
 
   const handleNavigationButton = ({id, arrOfNavList, index}: Handlenavigationbutton) => {
-
-    const navigateSmoothly = () => {
-      const targer_el = document.getElementById(id) as HTMLElement
-      const targetPositionY = targer_el.getBoundingClientRect().top
-      const currentPostionY = window.pageYOffset
-      const distance: number =  currentPostionY + targetPositionY
-
-      return distance
-    }
-
-    addColor({arrOfNavList: arrOfNavList, index: index })
-    window.scroll({top: navigateSmoothly(), behavior: 'smooth'}) 
+    navigateSmoothly(id)
+    addColor({arrOfNavList: arrOfNavList, index: index }) 
   }
 
   const handleNavigationColorScrolling = () => {

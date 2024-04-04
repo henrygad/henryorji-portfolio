@@ -1,22 +1,21 @@
 import "./styles.css"
 import Displayslides from "../responsiveSlider/Displayslides"
-import Slidersettings from "../responsiveSlider/Slidersettings"
 import herocouroslestar from "../assest/couroselstar.svg"
 
 const Herocourosel = () => {
 
     const slidesContent  = [
-      <div className="slide_content"><p>ReactJS</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>React Native</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>NodeJS</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 1"><p>ReactJS</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 2"><p>React Native</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 3"><p>NodeJS</p> <img src={herocouroslestar} alt="star" /></div>,
 
-      <div className="slide_content"><p>Figma</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>HTML</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>CSS</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 4"><p>Figma</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 5"><p>HTML</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 6"><p>CSS</p> <img src={herocouroslestar} alt="star" /></div>,
 
-      <div className="slide_content"><p>JavaScript</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>Git</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content"><p>GitHub</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 7"><p>JavaScript</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 8"><p>Git</p> <img src={herocouroslestar} alt="star" /></div>,
+      <div className="slide_content 9"><p>GitHub</p> <img src={herocouroslestar} alt="star" /></div>,
       ]
 
       const sliderId = "horocurosel-js"
@@ -27,24 +26,29 @@ const Herocourosel = () => {
 
         if(window.innerWidth <= 480){
           value = 1
-        } else value = 3
+        }/* else if(window.innerWidth >= 480 &&  window.innerWidth <= 767){
+           value = 2
+         } */else value = 3
     
         return value     
       }
       const autoPlay = {
         play: true,
-        pause: true,
-        onloadPlay: true,
-        autoPlayDurition: 10000,
-        autoPlayTransitionAnimation: "left 10s linear"
+        pause: false,
+        onloadPlay: false,
+        autoPlayDurition: 5000,
+        autoPlayTransitionAnimation: "left 5s linear"
       }
     
-        const onResizeNumberOfContent_per_vw = Slidersettings({sliderId, slidemove_from, totalNumberOfcontents, numberOfContent_per_vw, autoPlay}, (value)=>{}) 
-        onResizeNumberOfContent_per_vw()
 
 
-
-  return <Displayslides slidesContent={slidesContent}  numberOfContent_per_vw={numberOfContent_per_vw()} slidemove_from={slidemove_from} sliderId={sliderId}/>
+  return <Displayslides  slidesContent={slidesContent}
+                          numberOfContent_per_vw={numberOfContent_per_vw}
+                          totalNumberOfcontents={totalNumberOfcontents}
+                          slidemove_from={slidemove_from}
+                          sliderId={sliderId}
+                          autoPlay={autoPlay}
+                          advancefeatures={(value)=>{}} />
 }
 
 export default Herocourosel

@@ -1,4 +1,5 @@
 import "./App.css"
+import navigateSmoothly from "./Hooks/navigateSmoothly"
 import Header from "./components/Header"
 import Herocourosel from "./components/Herocourosel"
 import Button from "./components/Button"
@@ -14,15 +15,6 @@ import Animatediv from "./components/Animatediv"
 
 
 const App = () => {
-
-  const NavigateSmoothly = (id: string) => {
-    const targer_el = document.getElementById(id) as HTMLElement
-    const targetPositionY = targer_el.getBoundingClientRect().top
-    const currentPostionY = window.pageYOffset
-    const distance: number =  currentPostionY + targetPositionY
-
-    window.scroll({top: distance, behavior: 'smooth'})
-  }
   
 
   return<>
@@ -67,7 +59,7 @@ const App = () => {
                    animationTimeDalay={3000} />
                 </div>
                 <div className="hero_btn" >
-                  <div onClick={()=> NavigateSmoothly('contact_me')} >
+                  <div onClick={()=> navigateSmoothly('contact_me')} >
                     <Button text="Hire me" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
                   </div>
                   </div>
@@ -169,7 +161,7 @@ const App = () => {
                 animationTimeDalay={500}
                 onScroll={{id:'call_to_action', dispaly: true}}/> 
           </div>
-            <div onClick={()=> NavigateSmoothly('contact_me')}>
+            <div onClick={()=> navigateSmoothly('contact_me')}>
               <Button  text="Message me" />
             </div>
         </div>
