@@ -104,36 +104,6 @@
      z-index: -1;
     }
      /* end of css styling for global rounded border image*/
- 
-
-
-
-
-
-/* *
-    css styles for header*/
-    .header_container .header_wrapper {
-        display: flex;
-        align-items: center;
-        grid-column-gap: 20px;
-        min-height: inherit;
-    }
-    .header_logo_container{
-        width: 100px;
-        height: 70px;
-        background-image: url("./assest//henry\'slogo_light.svg");
-        background-repeat: no-repeat;
-        background-size: 80px;
-        background-position-x: start;
-        background-position-y: center;
-        cursor: pointer;
-    }
-    .toggle_color .header_logo_container{
-      background-image: url("./assest//henry\'slogo_dark.svg");
-    }
-    .toggle_background_color_btn_container{
-    }
- /* end of header*/
 
 
 
@@ -495,9 +465,6 @@
 
 /*smartphones mobiles (portrait)*/
 @media (min-width: 0px) and (max-width: 480.9px){
-  .header_container .header_wrapper {
-    padding-left: 10px;
-  }
 
     .home_hero_grid_design{
         grid-template-columns: repeat(4, 1fr);

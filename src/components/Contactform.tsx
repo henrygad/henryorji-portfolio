@@ -2,8 +2,12 @@ import "./styles.css"
 import Button from "./Button"
 
 const Contactform = () => {
+  
+  const handleForm = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
     
-  return <form className="home_contact_form" action="">
+  return <form className="home_contact_form" onSubmit={e=>handleForm}>
     <div className="name_wrapper">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" placeholder="Zainab Nisa" id="name"/>

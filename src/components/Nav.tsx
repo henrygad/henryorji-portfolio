@@ -1,10 +1,26 @@
 import "./styles.css"
 import Button from "./Button"
-import { useRef} from "react"
+import {useEffect, useRef} from "react"
+import getOnviewpiont from "../Hooks/getOnviewport"
+
+
+interface Global {
+  arrOfNavList?: string
+  index?: number
+}
+
+interface Handlenavigationbutton extends Global {
+  id: string
+}
+
+interface addColor extends Global {
+}
+
 
 const Nav = () => {
   const togglenavRef = useRef<HTMLDivElement>(null) 
   const responsivenavRef = useRef<HTMLDivElement>(null)
+
 
   const handleToggleNav = () =>{ 
     togglenavRef.current?.classList.toggle('toggle')
@@ -18,7 +34,66 @@ const Nav = () => {
     
   }
 
- 
+  const handleNavigationButton = ({id, arrOfNavList, index}: Handlenavigationbutton) => {
+
+    const navigateSmoothly = () => {
+      const targer_el = document.getElementById(id) as HTMLElement
+      const targetPositionY = targer_el.getBoundingClientRect().top
+      const currentPostionY = window.pageYOffset
+      const distance: number =  currentPostionY + targetPositionY
+
+      return distance
+    }
+
+    addColor({arrOfNavList: arrOfNavList, index: index })
+    window.scroll({top: navigateSmoothly(), behavior: 'smooth'}) 
+  }
+
+  const handleNavigationColorScrolling = () => {
+
+    window.addEventListener('scroll', ()=>{
+      let index:number
+      const home =  getOnviewpiont('home')
+      const about =  getOnviewpiont('about_me')
+      const projects =  getOnviewpiont('projects')
+      const contact =  getOnviewpiont('contact_me')
+      
+      if(home){
+        index = 0
+      }else if(about){
+        index = 1
+      }else if(projects){
+        index = 2
+      }else if(contact){
+        index = 3
+      }else{
+        index = -1
+      }
+      
+       addColor({arrOfNavList: 'header_nav_list_js', index: index})
+       addColor({arrOfNavList: 'mobil_navigation_js', index: index})
+      }
+    )
+
+  }
+    
+  function addColor ({arrOfNavList, index }: addColor){    
+    const navLists = document.querySelectorAll<HTMLElement>('.'+arrOfNavList)
+
+     navLists.forEach((navList, navListIndex) =>{
+
+        navList.classList.remove('active_nav_list')
+
+          if(navListIndex === index){
+            navList.classList.add('active_nav_list')
+          } 
+    })
+
+  }
+
+  useEffect(()=>{
+    handleNavigationColorScrolling()
+  })
     
 
   return<nav className="header_main_menue">
@@ -26,16 +101,20 @@ const Nav = () => {
     <div className="desk_top_nav">
       <div className="menue_list_container">
         <ul className="menue_lists_wrapper">
-            <li className="home"></li>
-            <li className="about">About</li>
-            <li className="projects">Projects</li>
-            <li className="contact">Contact me</li>
+            <li className="header_nav_list_js  home"  onClick={()=>handleNavigationButton({id:'home', arrOfNavList:'header_nav_list_js', index: 0})}></li>
+            <li className="header_nav_list_js  about" onClick={()=>handleNavigationButton({id:'about_me', arrOfNavList: 'header_nav_list_js', index: 1})}>About</li>
+            <li className="header_nav_list_js  projects" onClick={()=>handleNavigationButton({id:'projects', arrOfNavList: 'header_nav_list_js', index: 2})}>Projects</li>
+            <li className="header_nav_list_js  contact" onClick={()=>handleNavigationButton({id:'contact_me', arrOfNavList: 'header_nav_list_js', index: 3})}>Contact me</li>
         </ul> 
       </div>
 
       <div className="header_menue_bnt_wrapper">
+        <div onClick={()=>handleNavigationButton({id:'contact_me'})}>
         <Button text="Hire me"  background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
-        <Button text="Download resume" />
+        </div>
+        <div>
+        <Button text="Download resume"/>
+        </div>
       </div>
     </div>
 
@@ -51,16 +130,20 @@ const Nav = () => {
     <div className="responsive_nav" ref={responsivenavRef}>
       <div className="menue_list_container">
         <ul className="menue_lists_wrapper">
-            <li className="home"></li>
-            <li className="about">About</li>
-            <li className="projects">Projects</li>
-            <li className="contact">Contact me</li>
+            <li className="mobil_navigation_js home" onClick={()=>handleNavigationButton({id:'home', arrOfNavList:'mobil_navigation_js', index: 0})} ></li>
+            <li className="mobil_navigation_js about" onClick={()=>handleNavigationButton({id:'about_me', arrOfNavList:'mobil_navigation_js', index: 1})}>About</li>
+            <li className="mobil_navigation_js projects" onClick={()=>handleNavigationButton({id:'projects', arrOfNavList:'mobil_navigation_js', index: 2})}>Projects</li>
+            <li className="mobil_navigation_js contact" onClick={()=>handleNavigationButton({id:'contact_me', arrOfNavList:'mobil_navigation_js', index: 3})}>Contact me</li>
         </ul> 
       </div>
 
-      <div className="header_menue_bnt_wrapper">
+      <div className="header_menue_bnt_wrapper" >
+        <div  onClick={()=>handleNavigationButton({id:'contact_me'})}>
         <Button text="Hire me"  background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
-        <Button text="Download resume" />
+        </div>
+        <div>
+         <Button text="Download resume" />
+        </div>
       </div>
     </div>
   

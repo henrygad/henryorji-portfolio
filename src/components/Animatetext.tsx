@@ -2,6 +2,7 @@ import "./styles.css"
 import { useEffect, useRef, useState } from "react"
 import { CSSProperties} from "react"
 import { Global } from "../Globaltypes"
+import getOnviewpiont from "../Hooks/getOnviewport"
 
 
 const Animatetext = ( {content, 
@@ -15,34 +16,42 @@ const Animatetext = ( {content,
     const [minHeight, setMinHeight] = useState<number>(20)
     const parentEle = useRef<HTMLDivElement>(null)
 
+
     useEffect(()=>{
-      const parentDivMinHeight =  Number(parentEle.current?.firstElementChild?.clientHeight)
-      setMinHeight(parentDivMinHeight)
+      handleResizeDivHeight() 
+      window.addEventListener('resize', () => {
+        handleResizeDivHeight()
+      })
+
+
 
       if(!onScroll?.id){
         return;
       }
       
       window.addEventListener("scroll", ()=>{
-        const el_id = document.getElementById(onScroll.id) as HTMLElement
-        const rect = el_id.getBoundingClientRect()
-       
-        function onSection(){
-          return(
-            rect.top <= el_id.clientHeight / 2 &&
-            rect.bottom >= el_id.clientHeight / 2
-          )
-        }
+        const onSectionViewPort = getOnviewpiont(onScroll?.id)
 
-         if(onScroll?.dispaly && onSection() === true){
+         if(onScroll?.dispaly && onSectionViewPort){
               setTimeout(() => {
                 setIsOn(true)
             }, animationTimeDalay ); 
           }    
-      
       })
 
-    }, [onScroll?.id, onScroll?.dispaly, animationTimeDalay])
+    }, [onScroll?.id, onScroll?.dispaly, animationTimeDalay ])
+
+    function handleResizeDivHeight() {
+      const parentDivMinHeight =  Number(parentEle.current?.firstElementChild?.clientHeight)
+      setMinHeight(parentDivMinHeight)
+    }
+
+
+
+
+
+     
+
 
     const Style: CSSProperties = {
       display: 'flex',

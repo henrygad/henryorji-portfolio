@@ -7,18 +7,6 @@
     min-height: 10vh;
     max-height: 100px;
 }
-.header_nav_fixed_position{
-    /* a header navigation fixed position  */
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 100;
-}
-.header_nav_fixed_position_margin_top{
-    /* a header  navigation fixed position margin at the top */
-   margin-top: 10vh;
-}
 .header_container_auto{
    /* an auto header container with an initial height of 100px */
     position: relative;
@@ -63,10 +51,6 @@
     .header_container_10vh{
         /* a header container with an initial height of 10vh */
         min-height: 90px;
-    }
-    .header_nav_fixed_position_margin_top{
-        /* a header  navigation fixed position margin at the top */
-       margin-top: 90px;
     }
     .hero_container_90vh{
         /* a hero container with an initial height of 90vh */

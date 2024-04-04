@@ -33,10 +33,24 @@
     transition: all .5s ease-out;
  }
  /* * 
- css styling for global animation */
+  end of css styling for global animation */
+
+
+ /* * 
+    css styling for active nav list */
+ .active_nav_list{
+    border-radius: 40px;
+    background-color: rgba(41, 41, 41, 1);
+}
+.toggle_color .active_nav_list{
+    background-color: lightgray;
+}
+/* end of css styling for active nav list */
 
 
 
+ /* *
+  css styling for global border image style */
  .featured_projects .wrapper .featured_projects_box .text .product_index,
  .toggle_btn_responsive_nav,
 .menue_lists_wrapper,
@@ -68,6 +82,40 @@
     border-radius: inherit;
 }
 /* end of global css  style */
+
+
+
+/* *
+    css styles for header component*/
+    .header_container{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        transition: all .5s ease-in-out;
+    }
+    .header_container .header_wrapper {
+        display: flex;
+        align-items: center;
+        grid-column-gap: 20px;
+        min-height: inherit;
+    }
+    .header_logo_container{
+        width: 100px;
+        height: 70px;
+        background-image: url("../assest//henry\'slogo_light.svg");
+        background-repeat: no-repeat;
+        background-size: 80px;
+        background-position-x: start;
+        background-position-y: center;
+        cursor: pointer;
+    }
+    .toggle_color .header_logo_container{
+      background-image: url("../assest//henry\'slogo_dark.svg");
+    }
+ /* end of css styly for header component*/
+
 
 
 /* *
@@ -117,8 +165,6 @@
 .menue_lists_wrapper{
     display: inline-flex;
     align-items: center;
-    grid-column-gap: 20px;
-    
     padding-left: 5px;
     padding-right: 30px;
     padding-block: 2px;
@@ -127,20 +173,20 @@
     font-size: 13px;
     flex-shrink: 0;
     list-style: none;
+    padding-inline: 12px;
+    padding-block: 5px;
+    transition: all .25s ease;
     cursor: pointer;
 }
 .menue_lists_wrapper .home{
     width: 50px;
     height: 40px;
-    border-radius: 40px;
-    background-color: rgba(41, 41, 41, 1);
     background-image: url("../assest//homeicon_white.svg");
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: center;
 }
 .toggle_color .menue_lists_wrapper .home{
-    background-color: lightgray;
     background-image: url("../assest//homeicon_black.svg");
 }
 .header_menue_bnt_wrapper{
@@ -577,6 +623,7 @@
         grid-row-gap: 50px;
         position: fixed;
         left: 0;
+        bottom: -100%;
         width: 50%;
         height: 100%;
         transition: all .5s linear;

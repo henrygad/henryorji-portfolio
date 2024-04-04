@@ -1,6 +1,7 @@
 import "./styles.css"
 import { CSSProperties,  useState, useEffect} from "react"
 import { Global } from "../Globaltypes"
+import getOnviewpiont from "../Hooks/getOnviewport"
 
 interface Props extends Global{
   animateFrom: string
@@ -19,26 +20,19 @@ const Animatediv = ({
 
     const [isOn, setIsOn] = useState<boolean>(false)
 
+
     useEffect(()=>{
       if(!onScroll?.id){
         return;
       }
       
       window.addEventListener("scroll", ()=>{
-        const el_id = document.getElementById(onScroll.id) as HTMLElement
-        const rect = el_id.getBoundingClientRect()
-      
-        function onSectionView(){
-          return(
-            rect.top <= el_id.clientHeight / 2 &&
-            rect.bottom >= el_id.clientHeight / 2
-          )
-        }
+        const onSectionViewPort = getOnviewpiont(onScroll.id)
 
               setTimeout(() => {
-                if(onScroll?.dispaly && onSectionView()){   
+                if(onScroll?.dispaly && onSectionViewPort){   
                   setIsOn(true)
-                }else if(onScroll?.reverse && !onSectionView()){
+                }else if(onScroll?.reverse && !onSectionViewPort){
                   setIsOn(false)
                 }
             }, animationTimeDalay ); 
@@ -46,7 +40,9 @@ const Animatediv = ({
       
       })
 
-    }, [onScroll?.id, onScroll?.dispaly, onScroll?.reverse, animationTimeDalay])
+    }, [onScroll?.id, onScroll?.dispaly, onScroll?.reverse, animationTimeDalay ])
+
+
 
 
 

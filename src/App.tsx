@@ -1,6 +1,5 @@
 import "./App.css"
-import Nav from "./components/Nav"
-import Togglebackgroundcolor from "./components/Togglebackgroundcolor"
+import Header from "./components/Header"
 import Herocourosel from "./components/Herocourosel"
 import Button from "./components/Button"
 import { developmentprocessdata, featuresprojecttsdata, testimonialData} from "./datas"
@@ -15,20 +14,20 @@ import Animatediv from "./components/Animatediv"
 
 
 const App = () => {
+
+  const NavigateSmoothly = (id: string) => {
+    const targer_el = document.getElementById(id) as HTMLElement
+    const targetPositionY = targer_el.getBoundingClientRect().top
+    const currentPostionY = window.pageYOffset
+    const distance: number =  currentPostionY + targetPositionY
+
+    window.scroll({top: distance, behavior: 'smooth'})
+  }
   
 
   return<>
-    <header className="header_nav_fixed_position">
-      <div className="header_container  header_container_10vh">
-        <div className="header_wrapper">
-          <span className="header_logo_container">
-          </span>
-          <Nav />
-          <div className="toggle_background_color_btn_container">
-            <Togglebackgroundcolor  />
-          </div>
-        </div>
-      </div>
+    <header className=" header_container_10vh"  id="home" >
+     <Header />
     </header>
     <main className="header_nav_fixed_position_margin_top">
       <section className="home_hero_section hero_container_90vh"id="home_Section">
@@ -67,8 +66,10 @@ const App = () => {
                    justify_Content="center"
                    animationTimeDalay={3000} />
                 </div>
-                <div className="hero_btn">
-                      <Button text="Hire me" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+                <div className="hero_btn" >
+                  <div onClick={()=> NavigateSmoothly('contact_me')} >
+                    <Button text="Hire me" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+                  </div>
                   </div>
               </div>
             </div>
@@ -106,7 +107,7 @@ const App = () => {
           ))} 
         </div>
       </section>
-      <section className="featured_projects container_2clm">
+      <section className="featured_projects container_2clm" id="projects">
       <div className="title"><h2>My featured projects</h2> <div className="star_icon"></div></div>
       <div className="wrapper">
         {featuresprojecttsdata.map((values, index)=>(
@@ -168,7 +169,9 @@ const App = () => {
                 animationTimeDalay={500}
                 onScroll={{id:'call_to_action', dispaly: true}}/> 
           </div>
-          <Button  text="Message me" />
+            <div onClick={()=> NavigateSmoothly('contact_me')}>
+              <Button  text="Message me" />
+            </div>
         </div>
       </section>
       <section className="contact_me" id="contact_me">
@@ -190,7 +193,7 @@ const App = () => {
         </div>
       </section>
     </main>
-    <footer>
+    <footer id="footer">
       <section className="footer_container  container_2clm">
           <div className="wrapper flex_box_2d">
             <span className="footer_logo_container">
