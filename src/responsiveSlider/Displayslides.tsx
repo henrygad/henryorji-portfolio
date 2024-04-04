@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useRef} from "react"
+import { CSSProperties, useRef} from "react"
 import {Getcurrentslidesposition, Moveslides} from "./app/index"
 import {Autoslidernav} from "./app/controls"
 
