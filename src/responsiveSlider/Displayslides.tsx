@@ -54,10 +54,11 @@ advancefeatures = (value: {}) => {}}: Props) => {
    }
     
 
-   const handleSlides = (updatedNumberOfContent_per_vw: number) => {
+   setTimeout(()=>{handleSlides(numberOfContent_per_vw())}, 1)
+   function handleSlides (updatedNumberOfContent_per_vw: number) {
 
-      const upadtedNumberOfSlides: number = (totalNumberOfcontents / updatedNumberOfContent_per_vw)  * oneSlide
-      const updatedTotalNumberOFSlidesWidht: number = upadtedNumberOfSlides +  repeatFirstslide
+      const upadtedNumberOfSlides = (totalNumberOfcontents / updatedNumberOfContent_per_vw) * oneSlide
+      const updatedTotalNumberOFSlidesWidht = upadtedNumberOfSlides +  repeatFirstslide
 
       if(!slidesElRef.current) return;
 
@@ -94,19 +95,13 @@ advancefeatures = (value: {}) => {}}: Props) => {
    }
 
 
-   useEffect(()=> { 
-      handleSlides(3)
-      setTimeout(()=>{handleSlides(1)}, 20000)
-
-   })
-  
+   const initialNumberOfContent_per_vw = numberOfContent_per_vw()
    window.addEventListener("resize", ()=>{
-      const updatedNumberOfSlides: number = numberOfContent_per_vw()
-      
-      if(updatedNumberOfSlides !== initialNumberOfSlides){
-        // handleSlides(updatedNumberOfSlides)
-         initialNumberOfSlides = updatedNumberOfSlides
-      }
+      const updatedNumberOfContent_per_vw: number = numberOfContent_per_vw()
+
+      if(initialNumberOfContent_per_vw !== updatedNumberOfContent_per_vw){  
+         window.location.reload()
+      }  
    })
 
 
@@ -133,18 +128,17 @@ advancefeatures = (value: {}) => {}}: Props) => {
 
 
 
-  return <div style={sliderStyle}>
-  <div ref={slidesElRef} id={sliderId} style={slidesStyle}>
+   return <div style={sliderStyle}>
+   <div ref={slidesElRef} id={sliderId} style={slidesStyle}>
 
-     {createNewArrslides.map(slideContents => (
-      slideContents.map((slideContent, index) =>  <div id={index + 'slide'} key={index + 1} style={slideStyle}>{slideContent}</div>)
-     ))}
+      {createNewArrslides.map(slideContents => (
+         slideContents.map((slideContent, index) =>  <div id={index + 'slide'} key={index + 1} style={slideStyle}>{slideContent}</div>)
+      ))}
 
 
-
-     { createNewArrslides[0].map((slideContent, index) => <div id={index + 'slide'} key={index + 1} style={slideStyle}>{slideContent}</div>)}
-  </div>
-</div>
+      { createNewArrslides[0].map((slideContent, index) => <div id={index + 'slide'} key={index + 1} style={slideStyle}>{slideContent}</div>)}
+   </div>
+   </div>
 }
 
 export default Displayslides 

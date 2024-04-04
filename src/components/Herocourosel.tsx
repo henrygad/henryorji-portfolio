@@ -4,7 +4,7 @@ import herocouroslestar from "../assest/couroselstar.svg"
 
 const Herocourosel = () => {
 
-    const slidesContent  = [
+      const slidesContent  = [
       <div className="slide_content 1"><p>ReactJS</p> <img src={herocouroslestar} alt="star" /></div>,
       <div className="slide_content 2"><p>React Native</p> <img src={herocouroslestar} alt="star" /></div>,
       <div className="slide_content 3"><p>NodeJS</p> <img src={herocouroslestar} alt="star" /></div>,
@@ -24,20 +24,18 @@ const Herocourosel = () => {
       const numberOfContent_per_vw = () => {
         let value: number
 
-        if(window.innerWidth <= 480){
-          value = 1
-        }/* else if(window.innerWidth >= 480 &&  window.innerWidth <= 767){
-           value = 2
-         } */else value = 3
+        if(window.innerWidth >= 0 && window.innerWidth <= 480){
+             value = 1
+        }else value = 3
     
         return value     
       }
       const autoPlay = {
         play: true,
-        pause: false,
-        onloadPlay: false,
-        autoPlayDurition: 5000,
-        autoPlayTransitionAnimation: "left 5s linear"
+        pause: true,
+        onloadPlay: true,
+        autoPlayDurition: 10000,
+        autoPlayTransitionAnimation: "left 10s linear"
       }
     
 
