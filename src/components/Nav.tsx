@@ -51,9 +51,9 @@ const Nav = () => {
       
       if(home){
         index = 0
-      }else if(about){
-        index = 1
       }else if(projects){
+        index = 1
+      }else if(about){
         index = 2
       }else if(contact){
         index = 3
@@ -93,8 +93,8 @@ const Nav = () => {
       <div className="menue_list_container">
         <ul className="menue_lists_wrapper">
             <li className="header_nav_list_js  home"  onClick={()=>handleNavigationButton({id:'home', arrOfNavList:'header_nav_list_js', index: 0})}></li>
-            <li className="header_nav_list_js  about" onClick={()=>handleNavigationButton({id:'about_me', arrOfNavList: 'header_nav_list_js', index: 1})}>About</li>
-            <li className="header_nav_list_js  projects" onClick={()=>handleNavigationButton({id:'projects', arrOfNavList: 'header_nav_list_js', index: 2})}>Projects</li>
+            <li className="header_nav_list_js  projects" onClick={()=>handleNavigationButton({id:'projects', arrOfNavList: 'header_nav_list_js', index: 1})}>Projects</li>
+            <li className="header_nav_list_js  about" onClick={()=>handleNavigationButton({id:'about_me', arrOfNavList: 'header_nav_list_js', index: 2})}>About</li>
             <li className="header_nav_list_js  contact" onClick={()=>handleNavigationButton({id:'contact_me', arrOfNavList: 'header_nav_list_js', index: 3})}>Contact me</li>
         </ul> 
       </div>

@@ -45,7 +45,7 @@
 @media (max-height: 600px){
     .header_container_10vh{
         /* a header container with an initial height of 10vh */
-        min-height: 90px;
+        min-height: 70px;
     }
     .hero_container_90vh{
         /* a hero container with an initial height of 90vh */

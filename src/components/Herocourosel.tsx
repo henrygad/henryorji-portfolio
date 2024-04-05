@@ -4,18 +4,19 @@ import herocouroslestar from "../assest/couroselstar.svg"
 
 const Herocourosel = () => {
 
+
       const slidesContent  = [
-      <div className="slide_content 1"><p>ReactJS</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 2"><p>React Native</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 3"><p>NodeJS</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 1"><p>ReactJS</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 2"><p>React Native</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 3"><p>NodeJS</p> <img src={herocouroslestar} alt="star" /></div>,
 
-      <div className="slide_content 4"><p>Figma</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 5"><p>HTML</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 6"><p>CSS</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 4"><p>Figma</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 5"><p>HTML</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 6"><p>CSS</p> <img src={herocouroslestar} alt="star" /></div>,
 
-      <div className="slide_content 7"><p>JavaScript</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 8"><p>Git</p> <img src={herocouroslestar} alt="star" /></div>,
-      <div className="slide_content 9"><p>GitHub</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 7"><p>JavaScript</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 8"><p>Git</p> <img src={herocouroslestar} alt="star" /></div>,
+        <div className="slide_content 9"><p>GitHub</p> <img src={herocouroslestar} alt="star" /></div>,
       ]
 
       const sliderId = "horocurosel-js"

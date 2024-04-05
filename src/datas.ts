@@ -1,5 +1,14 @@
 import develop_process_img from "./assest/develop_process_img.svg"
 import testimonial_profile_img from "./assest/testimonialprofileimage.png"
+import arowoshegbe_website from "./assest/arowoshegbe_website.png"
+import traveling_website from "./assest/traveling_website.png"
+import myoceanbox_website from "./assest/myocean_website.png"
+import henry_webiste from "./assest/henry_website.png"
+import hairsalon_website from "./assest/hairsalon_website.png"
+
+
+
+
 interface Global {
     image: string,
     title: string
@@ -10,8 +19,8 @@ interface Data2 extends Global {
 
 }
 interface Data3 extends Global {
-    isLive: boolean,
-    isMoblieApp: boolean,
+    isLive: boolean
+    siteUlr: string
 }
 interface Data4 {
     image: string
@@ -43,25 +52,39 @@ export const developmentprocessdata: Data2[] = [
 
 export const featuresprojecttsdata: Data3[] = [
     {
-        image:" https://arowoshegbesteel.com/",
-        title: 'Traves',
+        image: arowoshegbe_website,
+        title: 'Industrail installation webiste',
         description: 'This initial step involves a systematic and thorough exploration of the market landscape, user needs, and existing solutions.',
         isLive: true,
-        isMoblieApp: false
+        siteUlr: 'https://arowoshegbesteel.com/'
     },
     {
-        image:"https://travelingwebsitehenry.netlify.app/",
-        title: 'Ashalystylist',
+        image: traveling_website,
+        title: "Traveling webiste",
         description: 'This initial step involves a systematic and thorough exploration of the market landscape, user needs, and existing solutions.',
         isLive: true,
-        isMoblieApp: false
+        siteUlr: 'https://travelingwebsitehenry.netlify.app/'
     },
     {
-        image: "https://myoceanbox.netlify.app/",
-        title: 'skiylooks',
+        image: myoceanbox_website,
+        title: 'Logistics company webiste',
+        description: 'This initial step involves a systematic and thorough exploration of the market landscape, user needs, and existing solutions.',
+        isLive: true,
+        siteUlr: 'https://myoceanbox.netlify.app/'
+    },
+    {
+        image: henry_webiste,
+        title: 'Portfolio website',
+        description: 'This initial step involves a systematic and thorough exploration of the market landscape, user needs, and existing solutions.',
+        isLive: true,
+        siteUlr: 'https://henryorjis.netlify.app/'
+    },
+    {
+        image: hairsalon_website,
+        title: 'Hair stylist website',
         description: 'This initial step involves a systematic and thorough exploration of the market landscape, user needs, and existing solutions.',
         isLive: false,
-        isMoblieApp: true
+        siteUlr: 'https://hairldeines.netlify.app/'
     },
 ] 
 

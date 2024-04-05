@@ -8,18 +8,18 @@ interface Props {
     title: string,
     description: string,
     isLive: boolean,
-    isMobileApp: boolean
+    siteUlr: string
     index: number
 }
 
-const Featuredprojects = ({image, title, description, isLive, isMobileApp, index}:Props) => {
+const Featuredprojects = ({image, title, description, isLive, siteUlr, index}:Props) => {
   return <div className="featured_projects_box" key={index + 1} id={`${index}_featured_project`}>
             <Animatediv
                 content={
-                    <iframe className={isMobileApp?"image mobile" : "image desk_top" } src={image} title="desk top webiste" sandbox="allow-scripts" scrolling={isMobileApp? "no": 'yes'} />
+                    <img className="image"  src={image}  alt="smartmockuplatop"/>
                 }
                 animateFrom="left"
-                flex={isMobileApp? "auto 0": "2 0 280px"}
+                flex="1.5 0 280px"
                 onScroll={{ id: `${index}_featured_project`, dispaly: true, reverse: true}}
             />
              <Animatediv
@@ -41,7 +41,11 @@ const Featuredprojects = ({image, title, description, isLive, isMobileApp, index
                         />
 
                         {isLive?(
-                        <Button text="View live" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>):''}
+                            <div onClick={()=> window.open(siteUlr)}>
+                                <Button text="View live" background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+                            </div>
+                         ):
+                        ''}
                     </div>
                 }
                 animateFrom="right"

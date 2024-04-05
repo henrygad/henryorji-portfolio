@@ -361,7 +361,7 @@
           css style for footer section */
           .footer_container {
             grid-gap: 40px;
-            padding-bottom: 10px;
+            padding-bottom: 20px;
           }
           .footer_container .wrapper{
             align-items: center;
@@ -385,7 +385,7 @@
           .footer_container .wrapper .footer_nav{
             flex: 1 0;
             grid-column-gap: 30px;
-            grid-row-gap: 20px;
+            grid-row-gap: 30px;
           }
           .footer_nav .footer_nav_wrapper{
             flex: 2 0;
@@ -397,7 +397,7 @@
             display: inline-flex;
             align-items: center;
             list-style: none;
-            padding-inline: 10px;
+            padding-inline: 15px;
             padding-block: 4px;
           }
           .footer_nav_list li{
@@ -411,10 +411,6 @@
             justify-content: flex-end;
             align-items: center;
             grid-column-gap: 20px;
-          }
-          .copy_right p{
-            font-size: 11px;
-            text-align: center;
           }
         /* end of css style for footer section */
 

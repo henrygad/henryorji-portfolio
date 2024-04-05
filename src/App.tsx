@@ -77,7 +77,7 @@ const App = () => {
             <div className="grid_box  remove_left_border remove_bottom_border "></div>
             <div className="grid_box remove_left_border remove_bottom_border "></div>
             <div className="grid_box remove_left_border remove_bottom_border"></div>
-            <div className="grid_box remove_bottom_border"></div>
+            <div className="grid_box remove_bottom_border remove_left_border"></div>
             <div className="grid_box remove_left_border remove_bottom_border add_star two"></div>
             <div className="grid_box remove_left_border remove_bottom_border"></div>
             <div className="grid_box remove_left_border remove_bottom_border"></div>
@@ -102,7 +102,7 @@ const App = () => {
       <div className="title"><h2>My featured projects</h2> <div className="star_icon"></div></div>
       <div className="wrapper">
         {featuresprojecttsdata.map((values, index)=>(
-          <Featuredprojects image={values.image} title={values.title} description={values.description} isLive={values.isLive} isMobileApp={values.isMoblieApp} index={index} />
+          <Featuredprojects image={values.image} title={values.title} description={values.description} isLive={values.isLive} siteUlr={values.siteUlr} index={index} />
         ))}
       </div>
       </section>
@@ -199,13 +199,12 @@ const App = () => {
                 </ul>
               </div>
               <div className="footer_bnt_wrapper">
-                <Button text="Hire me"  background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+                <div onClick={()=> navigateSmoothly('contact_me') }>
+                  <Button text="Hire me"  background_image="linear-gradient(240deg, var(--secondary-color), var(--primary-color))"/>
+                </div>
                 <Button text="Download resume" />
               </div>
             </div>
-          </div>
-          <div className="copy_right">
-            <p>henry copy right 2024</p>
           </div>
         </section>
     </footer>
