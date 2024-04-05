@@ -18,26 +18,26 @@ const App = () => {
   
 
   return<>
-    <header className=" header_container_10vh"  id="home" >
+    <header className=" header_container_10vh home_header"  id="home" >
      <Header />
     </header>
     <main className="header_nav_fixed_position_margin_top">
       <section className="home_hero_section hero_container_90vh"id="home_Section">
 
         <section className="home_hero_grid_design">
-            <div className="grid_box"></div>
-            <div className="grid_box"></div>
-            <div className="grid_box"></div>
-            <div className="grid_box is_display"></div>
-            <div className="grid_box is_display"></div>
-            <div className="grid_box add_star one "></div>
+            <div className="grid_box remove_right_border remove_bottom_border"></div>
+            <div className="grid_box remove_right_border"></div>
+            <div className="grid_box remove_right_border"></div>
             <div className="grid_box remove_right_border is_display"></div>
+            <div className="grid_box remove_right_border is_display"></div>
+            <div className="grid_box remove_bottom_border add_star one "></div>
+            <div className="grid_box remove_right_border remove_bottom_border is_display"></div>
             <div className="grid_box bigger_box ">
               <div className="content">
                 <div className="first_intro_text">
                   <Animatetext content={
                      <h2> 
-                     <span className="greetings">Hi there !</span> <br />
+                     <span className="greetings">Hi there!</span> <br />
                      <span className="name">I am Henry</span>
                    </h2>
                   } 
@@ -52,8 +52,7 @@ const App = () => {
                    animationTimeDalay={2500}/>
 
                    <Animatetext  content={
-                    <p > I'm currently from Lagos. I'm a driven and dedicated <br />
-                    software developer with passion for designing and developing clean <br /> and mobile  friendly web applications.</p>
+                    <p >I'm a driven and dedicated developer with passion for designing and developing clean and mobile friendly web applications.</p>
                    } 
                    justify_Content="center"
                    animationTimeDalay={3000} />
@@ -65,25 +64,25 @@ const App = () => {
                   </div>
               </div>
             </div>
-            <div className="grid_box remove_left_border is_display"></div>
-            <div className="grid_box remove_right_border is_display"></div>
-            <div className="grid_box remove_left_border is_display"></div>
-            <div className="grid_box remove_right_border is_display"></div>
-            <div className="grid_box remove_left_border is_display"></div>
-            <div className="grid_box remove_right_border is_display"></div>
-            <div className="grid_box remove_left_border is_display"></div>
-            <div className="grid_box is_display"></div>
-            <div className="grid_box is_display"></div>
-            <div className="grid_box is_display"></div>
-            <div className="grid_box "></div>
-            <div className="grid_box"></div>
-            <div className="grid_box"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_right_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_right_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_right_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_bottom_border is_display"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box remove_left_border remove_bottom_border is_display"></div>
+            <div className="grid_box  remove_left_border remove_bottom_border "></div>
+            <div className="grid_box remove_left_border remove_bottom_border "></div>
+            <div className="grid_box remove_left_border remove_bottom_border"></div>
             <div className="grid_box remove_bottom_border"></div>
-            <div className="grid_box remove_bottom_border add_star two"></div>
-            <div className="grid_box remove_bottom_border"></div>
-            <div className="grid_box remove_bottom_border"></div>
-            <div className="grid_box remove_bottom_border"></div>
-            <div className="grid_box is_display remove_bottom_border"></div>
+            <div className="grid_box remove_left_border remove_bottom_border add_star two"></div>
+            <div className="grid_box remove_left_border remove_bottom_border"></div>
+            <div className="grid_box remove_left_border remove_bottom_border"></div>
+            <div className="grid_box remove_left_border remove_bottom_border"></div>
+            <div className="grid_box is_display remove_left_border remove_bottom_border"></div>
         </section>
 
         <section className="home_curosel_slider_section">
@@ -188,7 +187,7 @@ const App = () => {
     <footer id="footer">
       <section className="footer_container  container_2clm">
           <div className="wrapper flex_box_2d">
-            <span className="footer_logo_container">
+            <span onClick={()=>{navigateSmoothly('home')}} className="footer_logo_container">
             </span>
             <div className="footer_nav flex_box_2d">
               <div className="footer_nav_wrapper">

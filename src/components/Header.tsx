@@ -2,6 +2,7 @@ import "./styles.css"
 import Nav from './Nav'
 import Togglebackgroundcolor from './Togglebackgroundcolor'
 import { useEffect, useState } from "react"
+import navigateSmoothly from "../Hooks/navigateSmoothly"
 
 
 const Header = () => {
@@ -33,12 +34,12 @@ const Header = () => {
 
   return  <div className="header_container" style={
     {
-        top: isOn? '0%' : '-10%',
+        top: isOn? '2%' : '-10%',
         opacity: onDisplay?  '1': '0',
 
      }} >
   <div className="header_wrapper">
-    <span className="header_logo_container">
+    <span onClick={()=>{navigateSmoothly('home')}} className="header_logo_container">
     </span>
     <Nav />
     <div className="toggle_background_color_btn_container">

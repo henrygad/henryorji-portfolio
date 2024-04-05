@@ -43,33 +43,6 @@
     .toggle_color .testimonial .title .star_icon{
      background-image: url('./assest//develop_process_icon_white.svg');
     }
-    .box_index_number_wrapper{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: absolute;
-     top: 0;
-     left: 0px;
-     transform: translatex(-50%);
-     width: 60px;
-     height: 60px;
-     border-radius: 50%;
-     background-color: var(--regular-color);
-    }
-    .toggle_color .box_index_number_wrapper{
-     background-color: #fff;
-    }
-    .box_index_number_wrapper .number{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 14px;
-     width: 40px;
-     height: 40px;
-     color: #fff;
-     border: 2px solid #fff;
-     border-radius: 50%;
-    }
      /* end of css style for global sections and sections titles */
 
 
@@ -106,6 +79,13 @@
      /* end of css styling for global rounded border image*/
 
 
+    /* *
+    css stylign for header section */
+    .home_header{
+      display: flex ;
+      align-items: center;
+    }
+    /* end of css styling for header section */
 
  /* *
     css style for home hero section*/
@@ -160,6 +140,9 @@
     top: -18%;
   }
   .home_hero_grid_design .grid_box.bigger_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     grid-area: 4 span / 4 span;
     border: 0;
@@ -183,13 +166,11 @@
     right: 0;
   }
   .home_hero_grid_design .grid_box.bigger_box .content{
+    flex: 1 0;
     display: flex;
     flex-direction: column;
     grid-row-gap: 30px;
-    width: 100%;
-    height: 100%;
-    padding-top: 25px;
-    padding-left: 20px;
+    padding-inline: 5px;
   }
   .home_hero_grid_design .grid_box.bigger_box .content > div h2{
     font-size: 16px;
@@ -206,22 +187,16 @@
     font-size: 24px;
     white-space: pre;
   }
-  .home_hero_grid_design .grid_box.bigger_box .content .second_into_text{
-    display: flex;
-    flex-direction: column;
-    grid-gap: 10px;
-  }
   .home_hero_grid_design .grid_box.bigger_box .content > div h1{
     font-weight: bold;
   }
   .home_hero_grid_design .grid_box.bigger_box .content > div p{
     text-align: center;
-    font-family:  var(--regular-font);
+    max-width: 420px;
   }
   .home_hero_grid_design .grid_box.bigger_box .content .hero_btn{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
   }
   .home_curosel_slider_section{
     position: relative;
@@ -266,7 +241,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 380px;
+        max-width: 480px;
         max-height: 380px;
      }
      .about_me .about_content_wrapper .image img{
@@ -360,10 +335,12 @@
           grid-row-gap: 100px;
           grid-column-gap: 20px;
         }
-        .contact_me .wrapper >div{
+        .contact_me .wrapper > div{
+          display: flex;
+          align-items: center;
           position: relative;
           padding-block: 40px;
-          padding-inline: 10px;
+          padding-inline: 40px;
           background-color: rgba(16, 17, 17, 1);
           border-radius: 10px;
           z-index: 1;
@@ -373,8 +350,6 @@
         }
         .contact_me .form_container{
           flex: 1.5 0;
-          display: flex;
-          align-items: center;
         }
         .contact_me .map_container{
           flex: 1 0;
@@ -390,18 +365,18 @@
           }
           .footer_container .wrapper{
             align-items: center;
-            grid-row-gap: 50px;
-            grid-column-gap: 30px;
+            grid-row-gap: 40px;
+            grid-column-gap: 40px;
           }
           .footer_container .wrapper .footer_logo_container{
             display: block;
             display: flex;
-            width: 100px;
-            height: 70px;
+            width: 70px;
+            height: 40px;
             background-image: url("./assest//henry\'slogo_light.svg");
             background-repeat: no-repeat;
-            background-size: 80px;
-            background-position: flex-start;
+            background-size: 60px;
+            background-position: center;
             cursor: pointer;
           }
           .toggle_color .footer_container .wrapper .footer_logo_container{
@@ -410,35 +385,36 @@
           .footer_container .wrapper .footer_nav{
             flex: 1 0;
             grid-column-gap: 30px;
-            grid-row-gap: 50px;
+            grid-row-gap: 20px;
           }
           .footer_nav .footer_nav_wrapper{
             flex: 2 0;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
           }
           .footer_nav_list{
             display: inline-flex;
-            justify-content: space-between;
-            grid-column-gap: 30px;
+            align-items: center;
             list-style: none;
-            padding-inline: 20px;
-            padding-block: 10px;
+            padding-inline: 10px;
+            padding-block: 4px;
           }
           .footer_nav_list li{
             cursor: pointer;
+            font-size: 13px;
+            padding-inline: 5px;
           }
           .footer_bnt_wrapper{
             flex: 1 0;
             display: flex;
             justify-content: flex-end;
-            grid-column-gap: 30px;
-          }
-          .footer_container .copy_right{
-            padding-left: 1px;
+            align-items: center;
+            grid-column-gap: 20px;
           }
           .copy_right p{
-            font-size: 10px;
+            font-size: 11px;
+            text-align: center;
           }
         /* end of css style for footer section */
 
@@ -486,6 +462,12 @@
       }
 
 
+      .about_me .about_content_wrapper .image{
+        max-width: 280px;
+        max-height: 240px;
+      }
+
+
       .testimonial .wrapper{
         padding-right: 30px;
       } 
@@ -493,6 +475,11 @@
 
       .call-to_action{
         background-position-x: right;
+      }
+
+
+      .contact_me .wrapper > div{
+        padding-inline: 15px;
       }
 
 

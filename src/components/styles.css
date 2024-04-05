@@ -89,25 +89,27 @@
     css styles for header component*/
     .header_container{
         position: fixed;
-        top: 0;
+        top: 50%;
         right: 0;
-        left: 0;
+        left: 0;     
         z-index: 100;
         opacity: 1;
         transition: top 1s ease-in, opacity 1s ease;
+
     }
     .header_container .header_wrapper {
         display: flex;
         align-items: center;
-        grid-column-gap: 20px;
+        grid-column-gap: 10px;
         min-height: inherit;
+
     }
     .header_logo_container{
-        width: 100px;
-        height: 70px;
+        width: 70px;
+        height: 40px;
         background-image: url("../assest//henry\'slogo_light.svg");
         background-repeat: no-repeat;
-        background-size: 80px;
+        background-size: 60px;
         background-position-x: start;
         background-position-y: center;
         cursor: pointer;
@@ -148,13 +150,11 @@
  */
 .header_main_menue{
     flex: 1 0;
-    display: flex;
 }
 .header_main_menue .desk_top_nav{
     display: flex;
-    justify-content: center;
     align-items: center;
-    grid-column-gap: 20px;
+    grid-column-gap: 10px;
     width: 100%;
     height: 100%;
 }
@@ -168,7 +168,6 @@
     align-items: center;
     padding-left: 5px;
     padding-right: 30px;
-    padding-block: 2px;
 }
 .menue_lists_wrapper li{
     font-size: 13px;
@@ -200,7 +199,6 @@
     width: 45px;
     height: 25px;
     border-radius: 40px;
-    background-color: #fff;
     cursor: pointer;
 }
 .toggle_btn .toggle{
@@ -262,20 +260,46 @@
  .my_design_and_development_process .wrapper{
     width: 100%;
     height: auto;
-    padding-left: 20px;
+    padding-left: 15px;
    }
    .my_design_and_development_process .wrapper .box{
     position: relative;
     height: auto;
     width: auto;
     max-width: 500px;
-    padding-left: 50px;
-    padding-top: 10px;
+    padding-left: 24px;
     padding-bottom: 60px;
     border-left: 1px solid #fff;
    }
    .toggle_color .my_design_and_development_process .wrapper .box{
     border-left-color: var(--regular-color);
+   }
+   .box_index_number_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    transform: translatex(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--regular-color);
+   }
+   .toggle_color .box_index_number_wrapper{
+    background-color: #fff;
+   }
+   .box_index_number_wrapper .number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    width: 70%;
+    height: 70%;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
    }
  .toggle_color .box_index_number_wrapper .number{
     color: #333;
@@ -285,11 +309,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    grid-row-gap: 20px;
+    grid-row-gap: 15px;
    }
    .my_design_and_development_process .wrapper .box .box_content img{
-    height: 40px;
-    object-fit: contain;
+        height: 30px;
+        object-fit: contain;
    }
    /* end of css for development process component */
 
@@ -445,11 +469,11 @@
    .home_contact_form >div{
     display: flex;
     grid-column-gap: 20px;
-    width: 90%;
+    width: 100%;
     height: inherit;
    } 
-   .home_contact_form >div label{
-    font-size: 16px;
+   .home_contact_form > div label{
+    font-size: 14px;
     border-left: 1px solid;
     border-bottom: 1px solid;
     border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color) );
@@ -459,7 +483,7 @@
    .home_contact_form >div input,
    .home_contact_form >div textarea{
     flex: 1 0;
-    font-size: 16px;
+    font-size: 14px;
     background-color: transparent;
     border-bottom: 1px solid;
     border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color) );
@@ -488,15 +512,15 @@
         justify-content: center;
         position: relative;
         width: 100%;
-        min-width: 280px;
-        min-height: 340px;
+        min-width: 240px;
+        min-height: 300px;
     }
     .home_google_map::after{
         position: absolute;
-        right: 4%;
-        bottom: 3%;
+        right: -1%;
+        bottom: -1%;
         content: ' ';
-        width: 75%;
+        width: 90%;
         height: 90%;
         background: url("../assest//googlemap.png");
         background-repeat: no-repeat;
@@ -508,9 +532,9 @@
     }
     .home_google_map iframe{
         position: relative;
-        width: 75%;
+        width: 90%;
         height: 90%;
-        border: 2px solid lightblue;
+        border: 1px solid lightblue;
         border-radius: 20px;
         box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.24); 
     }
@@ -539,6 +563,7 @@
 /*low resolution tablets, mobiles (portrait) for navigation*/
 @media (min-width: 0px) and (max-width: 767.99px){
     .header_main_menue{
+        display: flex;
         justify-content: flex-end;
     }
     .header_main_menue .desk_top_nav{
@@ -548,8 +573,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60px;
-        height: 40px;
+        width: 55px;
+        height: 35px;
         cursor: pointer;
     }
     .toggle_btn_responsive_nav .toggle_wrapper{
@@ -605,28 +630,27 @@
         bottom: 0;
     }
     .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.left{
-        transform-origin: top;
-        transform: rotate(45deg);
-        top: 0;
-        left: -5%;
-    }
-    .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.right{
         transform-origin: bottom;
         transform: rotate(45deg);
-        right: -7%;
+        top: -0%;
+        left: -9%;
+    }
+    .toggle_btn_responsive_nav.toggle .toggle_wrapper .short_hand.right{
+        transform-origin: top;
+        transform: rotate(45deg);
+        right: -9%;
         bottom: 0%;
     }
     .header_main_menue .responsive_nav{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        grid-row-gap: 50px;
         position: fixed;
         left: 0;
         bottom: -100%;
-        width: 50%;
+        width: 60%;
         height: 100%;
+        padding-top: 50px;
+        padding-left: 10px;
         transition: all .5s linear;
         background-color: var(--regular-color);
         z-index: 100;
@@ -636,24 +660,21 @@
     }
     .menue_list_container{
         flex: .8 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     .menue_list_container .menue_lists_wrapper{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        grid-row-gap: 50px;
-        padding: 0  20px;
-    }
-    .menue_list_container .menue_lists_wrapper li{
-        font-size: 14px;
+        grid-row-gap: 30px;
+        padding: 15px 0 40px 0;
     }
     .header_menue_bnt_wrapper{
         grid-column-gap: 0px;
         grid-row-gap: 20px;
         flex-direction: column;
-    }
-    .button_component{
-        font-size: 14px;
     }
     /* end of  onclick using js restyle toggle btn and responsive nav */
 
@@ -667,4 +688,8 @@
     .featured_projects .wrapper .featured_projects_box .image.desk_top{
         height: 600px;
       }
+
+      .home_contact_form{
+        max-width: 280px;
+       }
 }
